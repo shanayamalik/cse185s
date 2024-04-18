@@ -284,8 +284,6 @@ In order to enter content into a table, each cell is separated by an ampersand (
 
 \subsection{Example of a Table}
 
-\subsection{Example of a Table}
-
 The following is an example of a basic table in \LaTeX\ which includes two columns and three rows. 
 
 \begin{table}[h]
@@ -314,7 +312,53 @@ In order to create the above table, the \texttt{table} and \texttt{tabular} envi
     \item The \texttt{table} and \texttt{tabular} environments can be closed with \texttt{\textbackslash end\{table\}} and \texttt{\textbackslash end\{table\}} respectively.
 \end{enumerate}
 
+\section{Figures}
+\IEEEPARstart{F}{igures} are an important aspect of scientific documentation, as it allows for the visual representation of data. In \LaTeX, the handling of figures is sophisticated, giving the writer the ability to control the figure's placement, orientation, and format. 
 
+\subsection{Including the Graphicx Package}
+The \texttt{graphicx} package is relevant for managing images in \LaTeX. It should be included in the preamble, enabling commands such as \texttt{\textbackslash includegraphics}. The following line can be added at the beginning of the \LaTeX document, before \texttt{\textbackslash begin\{document\}}:
+\begin{verbatim}
+\usepackage{graphicx}
+\end{verbatim}
+
+\subsection{Inserting a Figure}
+In order to insert a figure, use the \texttt{figure} environment and specify your image's path and desired options within the \texttt{\textbackslash includegraphics} command:
+\begin{verbatim}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{path/to/image.png}
+\caption{Descriptive caption of the figure.}
+\label{fig:unique_label}
+\end{figure}
+\end{verbatim}
+The command line, \texttt{path/to/image.png}, should be replaced with the actual file path of the image.
+
+\subsection{Creating and Including Graphs}
+Graphs can be created within LaTeX using the \texttt{pgfplots} package, or you can include a pre-made graph using \texttt{\textbackslash includegraphics}:
+\begin{verbatim}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{path/to/graph.png}
+\caption{This graph demonstrates... [additional explanation].}
+\label{fig:graph_label}
+\end{figure}
+\end{verbatim}
+For a graph titled `titration_plot.png`, replace \texttt{path/to/graph.png} with the actual path to your image.
+
+\subsection{Crafting a Meaningful Caption}
+Captions provide context and explain the significance of the figure or graph. For example, a caption for a titration curve might elucidate the equivalence point's role in demonstrating acid-base neutralization:
+\begin{verbatim}
+\caption{Titration Curve illustrating the pH change as NaOH is added. The star marker indicates the equivalence point at 19.00 mL, where the pH is 9.05, highlighting the neutralization juncture.}
+\end{verbatim}
+
+\subsection{Referencing the Graph in Text}
+Reference the figure in your text using the \texttt{\textbackslash ref} command with the label assigned to the figure:
+\begin{verbatim}
+As illustrated in Figure \ref{fig:graph_label}, the equivalence point is indicated by...
+\end{verbatim}
+This enables a dynamic reference to the figure number assigned by LaTeX during compilation.
+
+\end{document}
 
 
 %----- Additional Features -----------------------------------------------------------------------
