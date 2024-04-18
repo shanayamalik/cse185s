@@ -168,7 +168,15 @@ Familiarity with LaTeX allows students to produce well-structured reports and pa
 
 \subsection{Environments}
 
-\subsubsection{Environments}
+Environments in LaTeX dictate how blocks of text are formatted and are delimited by \texttt{\textbackslash begin} and \texttt{\textbackslash end} commands. They are used for a variety of purposes, such as itemizing lists, aligning text, or formatting mathematical expressions.
+
+\subsubsection{Begin}
+
+The \texttt{\textbackslash begin\{environment\}} command initiates the environment, where \texttt{environment} is the name of the environment you wish to use. For example, \texttt{\textbackslash begin\{itemize\}} starts a bulleted list.
+
+\subsubsection{End}
+
+The \texttt{\textbackslash end\{environment\}} command is used to signal the end of an environment. LaTeX will stop applying the special formatting of the environment after this command. For instance, \texttt{\textbackslash end\{itemize\}} will end the bulleted list started earlier.
 
 %----- Additional Features -----------------------------------------------------------------------
 
