@@ -334,6 +334,12 @@ In order to add a figure to your document, use the \texttt{figure} environment. 
 \end{itemize}
 
 \subsubsection{Inserting a Titration Plot}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{Titration_Curve.png}
+  \caption{Table of pH Measurements at Incremental Volumes of Base Added During a Titration Process}
+  \label{fig:titrationplot}
+\end{figure}
 
 \subsection{Creating Graphs}
 In \LaTeX, graphs can be created using the \texttt{pgfplots} package, or can include a pre-made graph using \texttt{\textbackslash includegraphics}.
@@ -346,7 +352,7 @@ In order to reference the figure in the text, it can be done using the \texttt{\
 
 \section{Mathematical Formulas}
 
-IEEEPARstart{M}{athematical} formulas are central to engineering and scientific documents. \LaTeX provides a system for typesetting complex mathematical equations and symbols.  
+\IEEEPARstart{M}{athematical} formulas are central to engineering and scientific documents. \LaTeX provides a system for typesetting complex mathematical equations and symbols.  
 
 \subsection{Equation Environments}
 LaTeX uses two primary methods for displaying equations: inline and display. Inline equations appear within the text, while display equations are separated from the main text.
