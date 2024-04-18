@@ -240,6 +240,19 @@ If the title, author, and date have been set in the preamble, it can use the `\m
 
 There are subsections, which are used to create smaller divisions within a section. The subsections are useful for breaking down complex information into manageable parts. In \LaTeX\, subsections are created using the \textbackslash{}subsection command, which also automatically numbers the subsection relative to the parent section.
 
+\section{Body Text: Paragraphs and Content}
+\IEEEPARstart{T}{he} body text of a document is important as it includes the main message(s) and information. In order to make the document more readable and presentation, it is important to ensure the roper management of paragraphs and content. 
+
+\subsection{Paragraphs}
+In a \LaTeX\ text document, paragraphs are fundamental, and created by leaving a blank line between two blocks of text. This is preferable to using multiple backslashes (\\) which is a common mistake for novice engineers. The default for \LaTeX\ is that it indents the first line of each paragraph, except for those following a section heading. The behavior can be altered by changing the length of \texttt{\textbackslash parindent} for indentation and \texttt{\textbackslash parskip} for vertical spacing between paragraphs.  
+
+\subsubsection{Indentation and Spacing}
+The text in \LaTeX\ is justified as the default, meaning that the lines stretch to align both on the left and right margin. If needed, text alignment can be changed to left-aligned, right-aligned, or centered using specific environments or packages.
+
+\subsection{Content Blocks and Quotations}
+
+For longer quotes or content that needs to stand out, the \texttt{quote} and \texttt{quotation} environments can be used. These provide a visual distinction from the rest of the text, indenting the content from the main body.
+
 %----- Additional Features -----------------------------------------------------------------------
 
 \section{Additional Features}
