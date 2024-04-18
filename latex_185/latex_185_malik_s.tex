@@ -322,41 +322,25 @@ The \texttt{graphicx} package is relevant for managing images in \LaTeX. It shou
 \end{verbatim}
 
 \subsection{Inserting a Figure}
-In order to insert a figure, use the \texttt{figure} environment and specify your image's path and desired options within the \texttt{\textbackslash includegraphics} command:
-\begin{verbatim}
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.8\textwidth]{path/to/image.png}
-\caption{Descriptive caption of the figure.}
-\label{fig:unique_label}
-\end{figure}
-\end{verbatim}
-The command line, \texttt{path/to/image.png}, should be replaced with the actual file path of the image.
 
-\subsection{Creating and Including Graphs}
-Graphs can be created within LaTeX using the \texttt{pgfplots} package, or you can include a pre-made graph using \texttt{\textbackslash includegraphics}:
-\begin{verbatim}
-\begin{figure}[ht]
-\centering
-\includegraphics[width=\textwidth]{path/to/graph.png}
-\caption{This graph demonstrates... [additional explanation].}
-\label{fig:graph_label}
-\end{figure}
-\end{verbatim}
-For a graph titled `titration_plot.png`, replace \texttt{path/to/graph.png} with the actual path to your image.
+In order to add a figure to your document, use the \texttt{figure} environment. The environment allows the writer to include images, provide captions, and ensure figures are properly positioned, which is outlined as the following. 
 
-\subsection{Crafting a Meaningful Caption}
-Captions provide context and explain the significance of the figure or graph. For example, a caption for a titration curve might elucidate the equivalence point's role in demonstrating acid-base neutralization:
-\begin{verbatim}
-\caption{Titration Curve illustrating the pH change as NaOH is added. The star marker indicates the equivalence point at 19.00 mL, where the pH is 9.05, highlighting the neutralization juncture.}
-\end{verbatim}
+\begin{itemize}
+  \item The figure environment with placement specifiers is started with \texttt{\textbackslash begin\{figure\}[ht]}. 
+  \item The \texttt{\textbackslash centering} command centers the figure in the text column.
+  \item In order to insert the image, the command, \texttt{\textbackslash includegraphics\{image.png\}}, should be used, where the path is replaced with the image file path. 
+  \item The following command will allow the writer to insert a caption, \texttt{\textbackslash caption\{...\}}.
+  \item In the text, the figure can be referenced with \texttt{\textbackslash label\{...\}}.
+\end{itemize}
+
+\subsection{Creating Graphs}
+In \LaTeX, graphs can be created using the \texttt{pgfplots} package, or can include a pre-made graph using \texttt{\textbackslash includegraphics}.
+
+\subsection{Including a Meaningful Caption}
+The usage of captions is that it provides context and explains the significance of the figure or graph, which can be initated with \texttt{\textbackslash caption} and followed with the description.
 
 \subsection{Referencing the Graph in Text}
-Reference the figure in your text using the \texttt{\textbackslash ref} command with the label assigned to the figure:
-\begin{verbatim}
-As illustrated in Figure \ref{fig:graph_label}, the equivalence point is indicated by...
-\end{verbatim}
-This enables a dynamic reference to the figure number assigned by LaTeX during compilation.
+In order to reference the figure in the text, it can be done using the \texttt{\textbackslash ref} command with the label assigned to the figure. This enables a dynamic reference to the number assigned by \LaTeX during compilation.
 
 \end{document}
 
