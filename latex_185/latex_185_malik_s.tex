@@ -355,19 +355,15 @@ In order to reference the figure in the text, it can be done using the \texttt{\
 \IEEEPARstart{M}{athematical} formulas are central to engineering and scientific documents. \LaTeX provides a system for typesetting complex mathematical equations and symbols.  
 
 \subsection{Equation Environments}
-LaTeX uses two primary methods for displaying equations: inline and display. Inline equations appear within the text, while display equations are separated from the main text.
+\LaTeX uses two primary methods for displaying equations: inline and display. Inline equations appear within the text, while display equations are separated from the main text.
 
 \subsubsection{Inline Equations}
-Insert inline equations using dollar signs (\$). For example, the famous energy-mass equivalence formula by Einstein can be written inline like this:
+Insert inline equations using dollar signs (\$). Einstein's energy-mass equivalence formula can be written inline like the following. 
 
-\begin{verbatim}
-The formula \( E = mc^2 \) is an example of an inline equation.
-\end{verbatim}
-
-The actual formula will look like this in your document: \( E = mc^2 \).
+\( E = mc^2 \).
 
 \subsubsection{Display Equations}
-Display equations are separated from the text and typically centered. The `equation` environment is used for this purpose:
+The display equations are separated from the text and often centered. The `equation` environment is used for that purpose.
 
 \begin{verbatim}
 \begin{equation}
@@ -375,29 +371,30 @@ Display equations are separated from the text and typically centered. The `equat
 \end{equation}
 \end{verbatim}
 
-It will appear in your document like this:
+It will appear in the \LaTeX document like this:
 
 \begin{equation}
     E = mc^2
 \end{equation}
 
 \subsection{Symbols}
-LaTeX supports an extensive array of mathematical symbols. Greek letters, summation symbols, and integral symbols can be used as follows:
-
-\begin{verbatim}
-The Greek letter delta: \( \delta \) or \( \Delta \)
-The summation symbol: \( \sum \)
-The integral symbol: \( \int \)
-\end{verbatim}
+\LaTeX supports an extensive array of mathematical symbols, including Greek letters \( \delta \); summation symbols \( \sum \); and integral symbols \( \int \).
 
 \subsection{Fractions}
-Fractions are created with the `\frac` command:
+Fractions in LaTeX are created with the \textbackslash frac{} command, which takes the numerator and the denominator as arguments. 
 
 \begin{verbatim}
-A simple fraction looks like this: \( \frac{a}{b} \).
+\frac{numerator}{denominator}
 \end{verbatim}
 
-In your document, it will appear as: \( \frac{a}{b} \).
+\subsubsection{Writing the Fraction One-Half}
+
+In order to write one-half as a fraction, the following command should be used in the \LaTeX document. 
+\begin{verbatim}
+\frac{1}{2}
+\end{verbatim}
+
+This will appear as \( \frac{1}{2} \). 
 
 \subsection{Superscripts and Subscripts}
 Use the caret (^) for superscripts and the underscore (_) for subscripts:
