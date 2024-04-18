@@ -30,10 +30,9 @@
 % Copy package text here:
 
 \usepackage{graphicx}
+\usepackage{textcomp}
+
 % This is an example of how a \usepackage{} command should be included. You will need to include more packages to complete this assignment.
-
-
-
 
 %----- The DOCUMENT Environment-------------------------------------------------------------------
 
@@ -168,15 +167,43 @@ Familiarity with LaTeX allows students to produce well-structured reports and pa
 
 \subsection{Environments}
 
-Environments in LaTeX dictate how blocks of text are formatted and are delimited by \texttt{\textbackslash begin} and \texttt{\textbackslash end} commands. They are used for a variety of purposes, such as itemizing lists, aligning text, or formatting mathematical expressions.
+Environments in \LaTeX\ determine the formatting of text, and are represented as \texttt{\textbackslash begin} and \texttt{\textbackslash end} commands. It can be used for a variety of purposes, such as itemizing lists; aligning text; or formatting mathematical expressions.
 
 \subsubsection{Begin}
 
-The \texttt{\textbackslash begin\{environment\}} command initiates the environment, where \texttt{environment} is the name of the environment you wish to use. For example, \texttt{\textbackslash begin\{itemize\}} starts a bulleted list.
+The \texttt{\textbackslash begin\{environment\}} command initiates the environment, where \texttt{environment} is the name of the environment you wish to use.  
 
 \subsubsection{End}
 
-The \texttt{\textbackslash end\{environment\}} command is used to signal the end of an environment. LaTeX will stop applying the special formatting of the environment after this command. For instance, \texttt{\textbackslash end\{itemize\}} will end the bulleted list started earlier.
+The \texttt{\textbackslash end\{environment\}} command is used to signal the end of an environment. \LaTeX\ will stop applying the special formatting of the environment after this command.  
+
+\subsection{Reserved Characters}
+
+In \LaTeX\, there are characters that have special meanings and are 'reserved' for specific commands and functions. The characters include symbols, such as the backslash `\`, which indicates the start of a command, and the percent `\%`, which comments out text, to name a few. In order to display these characters as part of your text, the character must be escaped using specific commands. 
+
+\subsubsection{Why are these reserved?}
+
+Reserved characters in LaTeX serve specific functions in the typesetting process, such as invoking commands or formatting text. Because of these roles, they cannot be used directly to display their literal symbols without being escaped.
+
+\subsubsection{Explain the functions of these characters: \textbackslash , \textasciitilde , \textbackslash\textbackslash , \%}
+
+\begin{itemize}
+    \item \textbackslash : Introduces a command or a LaTeX keyword.
+    \item \textasciitilde : Produces a non-breakable space.
+    \item \textbackslash\textbackslash : Creates a new line or a line break.
+    \item \% : Starts a comment, which makes LaTeX ignore the rest of the text on the line.
+\end{itemize}
+
+\subsubsection{What if you want to display these characters?}
+
+To display reserved characters in the text, you need to use a specific set of commands that tells LaTeX to treat them as regular characters and not as commands or special symbols.
+
+\begin{itemize}
+    \item To display a backslash, use \texttt{\textbackslash textbackslash}.
+    \item To display a tilde, use \texttt{\textbackslash textasciitilde} or place it inside math mode as \texttt{\$ \textasciitilde \$}.
+    \item To display double backslashes, use \texttt{\textbackslash textbackslash\textbackslash textbackslash}.
+    \item To display the percent sign, use \texttt{\textbackslash textpercent}.
+\end{itemize}
 
 %----- Additional Features -----------------------------------------------------------------------
 
