@@ -253,6 +253,53 @@ The text in \LaTeX\ is justified as the default, meaning that the lines stretch 
 
 For longer quotes or content that needs to stand out, the \texttt{quote} and \texttt{quotation} environments can be used. These provide a visual distinction from the rest of the text, indenting the content from the main body.
 
+\section{Tables}
+
+\IEEEPARstart{T}{he} creation and management of tables in \LaTeX\ involve a combination of the \texttt{table} and \texttt{tabular} environments, as well as specific formatting commands.
+
+\subsection{Difference Between \texttt{\textbackslash begin\{table\}} and \texttt{\textbackslash begin\{tabular\}}}
+
+The \texttt{\textbackslash begin\{table\}} environment is used to add a floating table structure, which can include a caption or a label for referencing, and it allows the table to be positioned in a specific location. This is particularly useful when the document's layout and formatting require the table to not disrupt the text.
+
+In comparison, the \texttt{\textbackslash begin\{tabular\}} environment is where the data of the table is inputted and formatted. It defines the number of columns and whether the content of each column is left-aligned (\texttt{l}), centered (\texttt{c}), or right-aligned (\texttt{r}).
+
+\subsection{Characters and Symbols in Tables}
+
+In the \texttt{tabular} environment, the following symbols and characters are commonly used:
+\begin{itemize}
+    \item \texttt{l}, \texttt{c}, \texttt{r} represent column text alignment (left, center, right).
+    \item \texttt{|} represents a vertical line between columns.
+    \item \texttt{\textbackslash hline} is used to insert a horizontal line between rows.
+    \item \texttt{\textbackslash\textbackslash} ends a row and starts a new one.
+\end{itemize}
+
+\subsection{Entering Content into a Table}
+
+To enter content into a table, each cell is separated by an ampersand (\texttt{\&}) and each row is concluded with a double backslash (\texttt{\textbackslash\textbackslash}). 
+
+\subsection{Example of a Table}
+
+Below is an example of a basic table in LaTeX which consists of two columns and three rows:
+
+\begin{verbatim}
+\begin{table}[h]
+\centering
+\caption{An Example Table}
+\label{tab:example}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Left-Aligned Header} & \textbf{Centered Header} \\ \hline
+Data 1                       & Description 1            \\ \hline
+Data 2                       & Description 2            \\ \hline
+Data 3                       & Description 3            \\ \hline
+\end{tabular}
+\end{table}
+\end{verbatim}
+
+This code will generate a table with solid lines between columns and rows, a centered title, and a label for referencing within the document.
+
+Note: The \texttt{[h]} after \texttt{\textbackslash begin\{table\}} is a positioning specifier, suggesting that the table should be placed approximately here within the text.
+
 %----- Additional Features -----------------------------------------------------------------------
 
 \section{Additional Features}
