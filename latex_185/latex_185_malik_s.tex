@@ -344,8 +344,114 @@ The usage of captions is that it provides context and explains the significance 
 \subsection{Referencing the Graph in Text}
 In order to reference the figure in the text, it can be done using the \texttt{\textbackslash ref} command with the label assigned to the figure. This enables a dynamic reference to the number assigned by \LaTeX during compilation.
 
-\end{document}
+\section{Mathematical Formulas}
 
+IEEEPARstart{M}{athematical} formulas are central to engineering and scientific documents. \LaTeX provides a system for typesetting complex mathematical equations and symbols.  
+
+\subsection{Equation Environments}
+LaTeX uses two primary methods for displaying equations: inline and display. Inline equations appear within the text, while display equations are separated from the main text.
+
+\subsubsection{Inline Equations}
+Insert inline equations using dollar signs (\$). For example, the famous energy-mass equivalence formula by Einstein can be written inline like this:
+
+\begin{verbatim}
+The formula \( E = mc^2 \) is an example of an inline equation.
+\end{verbatim}
+
+The actual formula will look like this in your document: \( E = mc^2 \).
+
+\subsubsection{Display Equations}
+Display equations are separated from the text and typically centered. The `equation` environment is used for this purpose:
+
+\begin{verbatim}
+\begin{equation}
+    E = mc^2
+\end{equation}
+\end{verbatim}
+
+It will appear in your document like this:
+
+\begin{equation}
+    E = mc^2
+\end{equation}
+
+\subsection{Symbols}
+LaTeX supports an extensive array of mathematical symbols. Greek letters, summation symbols, and integral symbols can be used as follows:
+
+\begin{verbatim}
+The Greek letter delta: \( \delta \) or \( \Delta \)
+The summation symbol: \( \sum \)
+The integral symbol: \( \int \)
+\end{verbatim}
+
+\subsection{Fractions}
+Fractions are created with the `\frac` command:
+
+\begin{verbatim}
+A simple fraction looks like this: \( \frac{a}{b} \).
+\end{verbatim}
+
+In your document, it will appear as: \( \frac{a}{b} \).
+
+\subsection{Superscripts and Subscripts}
+Use the caret (^) for superscripts and the underscore (_) for subscripts:
+
+\begin{verbatim}
+\( x_i^2 \) represents \( x \) squared with subscript \( i \).
+\( 10^{10} \) represents 10 to the power of 10.
+\end{verbatim}
+
+\subsection{Complex Equations}
+LaTeX provides environments for complex equations involving matrices or multiple aligned equations.
+
+\subsubsection{Matrices}
+A simple 2x2 matrix looks like this:
+
+\begin{verbatim}
+\begin{equation}
+\begin{matrix}
+a & b \\
+c & d \\
+\end{matrix}
+\end{equation}
+\end{verbatim}
+
+\subsubsection{Aligned Equations}
+For equations that should be aligned at the equal sign:
+
+\begin{verbatim}
+\begin{align}
+y &= 2x + 3 \\
+y &= -x - 6
+\end{align}
+\end{verbatim}
+
+\subsection{Examples}
+Finally, here are some examples utilizing various LaTeX math environments:
+
+\begin{verbatim}
+\begin{equation}
+    {}_3F_2\left[\begin{array}{ccc} a, & b, & c \\ & d, & e \end{array} ; z\right]
+\end{equation}
+
+\begin{equation}
+    \frac{n!}{k!(n-k)!} = \binom{n}{k}
+\end{equation}
+\end{verbatim}
+
+These render in your document as:
+
+\begin{equation}
+    {}_3F_2\left[\begin{array}{ccc} a, & b, & c \\ & d, & e \end{array} ; z\right]
+\end{equation}
+
+\begin{equation}
+    \frac{n!}{k!(n-k)!} = \binom{n}{k}
+\end{equation}
+
+These examples demonstrate the flexibility of LaTeX in handling complex mathematical structures, making it an essential tool for technical documentation.
+
+\end{document}
 
 %----- Additional Features -----------------------------------------------------------------------
 
