@@ -183,7 +183,7 @@ In \LaTeX\, there are characters that have special meanings and are 'reserved' f
 
 \subsubsection{Why are these reserved?}
 
-Reserved characters in LaTeX serve specific functions in the typesetting process, such as invoking commands or formatting text. Because of these roles, they cannot be used directly to display their literal symbols without being escaped.
+Reserved characters in \LaTeX\ serve specific functions in the typesetting process, such as invoking commands or formatting text. The characters cannot be used directly to display the literal symbols without being escaped.
 
 \subsubsection{Explain the functions of these characters: \textbackslash , \textasciitilde , \textbackslash\textbackslash , \%}
 
@@ -191,12 +191,12 @@ Reserved characters in LaTeX serve specific functions in the typesetting process
     \item \textbackslash : Introduces a command or a LaTeX keyword.
     \item \textasciitilde : Produces a non-breakable space.
     \item \textbackslash\textbackslash : Creates a new line or a line break.
-    \item \% : Starts a comment, which makes LaTeX ignore the rest of the text on the line.
+    \item \% : Starts a comment, which makes \LaTeX\ ignore the rest of the text on the line.
 \end{itemize}
 
 \subsubsection{What if you want to display these characters?}
 
-To display reserved characters in the text, you need to use a specific set of commands that tells LaTeX to treat them as regular characters and not as commands or special symbols.
+In order to display reserved characters in the text, there is a specific set of commands that tells \LaTeX\ to treat those as regular characters and not as commands or special symbols.
 
 \begin{itemize}
     \item To display a backslash, use \texttt{\textbackslash textbackslash}.
@@ -204,6 +204,27 @@ To display reserved characters in the text, you need to use a specific set of co
     \item To display double backslashes, use \texttt{\textbackslash textbackslash\textbackslash textbackslash}.
     \item To display the percent sign, use \texttt{\textbackslash textpercent}.
 \end{itemize}
+
+\subsection{Preamble}
+
+The preamble of a LaTeX document is the section where you define the global settings and include the necessary packages that affect the entire document. It starts right after the \textbackslash documentclass command and continues until the \textbackslash begin\{document\} command. The preamble sets up elements such as the document type, packages, custom commands, and other configurations needed for the document.
+
+\subsubsection{\textbackslash documentclass[] and class files}
+
+The \textbackslash documentclass[] command is the first line in a \LaTeX\ file, and it defines the layout and style of the document. The options within the square brackets set global parameters such as font size, paper size, and whether the document is one-sided or two-sided. There are also class files, which are are predefined settings that format the document according to the type of content. 
+
+\subsubsection{Packages}
+
+Packages in LaTeX are extensions that add functionality to the LaTeX typesetting system. They are included in the preamble using the \textbackslash usepackage\{name\} command. Packages can provide additional fonts, macros, or enable the document to handle more complex tasks like advanced mathematical formatting, inserting images, handling links, or modifying the layout. An example of including a package is \textbackslash usepackage\{graphicx\}, which allows for managing graphics.
+
+\subsubsection{\textbackslash begin\{document\} and \textbackslash end\{document\}}
+
+The \textbackslash begin\{document\} command marks the commencement of the document's content section. Everything before this command is part of the preamble, and everything after is considered part of the document body where the actual content (text, figures, tables, etc.) is included. 
+
+The \textbackslash end\{document\} command is used to signify the end of the document. Anything written after this command will not be processed by LaTeX. This command ensures that the document is properly terminated, and all operations required to finalize the document are performed.
+
+
+\subsection{Title and Heading Information}
 
 %----- Additional Features -----------------------------------------------------------------------
 
