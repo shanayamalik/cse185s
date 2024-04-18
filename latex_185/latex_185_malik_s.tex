@@ -219,12 +219,27 @@ Packages in \LaTeX\ are extensions that add functionality to the typesetting sys
 
 \subsubsection{\textbackslash begin\{document\} and \textbackslash end\{document\}}
 
-The \textbackslash begin\{document\} command marks the beginning of the document's content section. If there is any text prior to this command, it is considered to be a part of the preamble.  
-
-The \textbackslash end\{document\} command is used to signify the end of the document. Anything written after this command will not be processed by LaTeX. This command ensures that the document is properly terminated, and all operations required to finalize the document are performed.
-
+The \textbackslash begin\{document\} command marks the beginning of the document's content section. If there is any text prior to this command, it is considered to be a part of the preamble.  In comparison, the \textbackslash end\{document\} command is used to signify the end of the document. If there is anything written after this command, it will not be processed.
 
 \subsection{Title and Heading Information}
+
+The title, author, and date are important components in most, if not all, of the document types. In \LaTeX\, the elements are often declared in the preamble and displayed in the document through a specific command.
+
+\subsubsection{Title, Author, and Date}
+
+In \LaTeX\, the title, author, and date of the document can be specified using the `\title{}`, `\author{}`, and `\date{}` commands, respectively. The commands are used in the preamble to store this information, which can later be displayed on the document's title page or any other appropriate location. The syntax is often listed as:
+
+\begin{verbatim}
+\title{Your Document Title}
+\author{Author Name}
+\date{Document Date} 
+\end{verbatim}
+
+If needed, multiple authors can also be listed by separating the names with the `\and` command. The date can also be removed entirely. 
+
+\subsubsection{\textbackslash maketitle command}
+
+If the title, author, and date have been set in the preamble, it can use the `\maketitle` command within the document body to generate a title page with this information. The `\maketitle` command uses the information provided by `\title{}`, `\author{}`, and `\date{}` to format a standard title page according to the document class being used. The `\maketitle` command is flexible and will automatically adjust the formatting of the title page based on the document class and any packages that might influence title page formatting. 
 
 %----- Additional Features -----------------------------------------------------------------------
 
