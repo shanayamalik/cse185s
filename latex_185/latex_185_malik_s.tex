@@ -227,19 +227,18 @@ The title, author, and date are important components in most, if not all, of the
 
 \subsubsection{Title, Author, and Date}
 
-In \LaTeX\, the title, author, and date of the document can be specified using the `\title{}`, `\author{}`, and `\date{}` commands, respectively. The commands are used in the preamble to store this information, which can later be displayed on the document's title page or any other appropriate location. The syntax is often listed as:
-
-\begin{verbatim}
-\title{Your Document Title}
-\author{Author Name}
-\date{Document Date} 
-\end{verbatim}
-
-If needed, multiple authors can also be listed by separating the names with the `\and` command. The date can also be removed entirely. 
+In \LaTeX\, the title, author, and date of the document can be specified using the `\title{}`, `\author{}`, and `\date{}` commands, respectively. The commands are used in the preamble to store this information, which can later be displayed on the document's title page or any other appropriate location. 
 
 \subsubsection{\textbackslash maketitle command}
 
-If the title, author, and date have been set in the preamble, it can use the `\maketitle` command within the document body to generate a title page with this information. The `\maketitle` command uses the information provided by `\title{}`, `\author{}`, and `\date{}` to format a standard title page according to the document class being used. The `\maketitle` command is flexible and will automatically adjust the formatting of the title page based on the document class and any packages that might influence title page formatting. 
+If the title, author, and date have been set in the preamble, it can use the `\maketitle` command within the document body to generate a title page with this information. The `\textbackslash{}maketitle` command uses the information provided by `\textbackslash{}title`, `\textbackslash{}author`, and `\textbackslash{}date` to format a standard title page according to the document class being used. The `\textbackslash{}maketitle` command is flexible and will automatically adjust the formatting of the title page based on the document class and any packages that might influence title page formatting. 
+
+\section{Sections}
+\IEEEPARstart{I}{n} a \LaTeX\ document, sections are major divisions and are created using the \textbackslash{}section command. This command numbers the sections and includes it in the document’s Table of Contents, if one is being used. The sections serve to help organize content into distinct parts, making the document easier to read and navigate.
+
+\subsection{Subsections}
+
+There are subsections, which are used to create smaller divisions within a section. The subsections are useful for breaking down complex information into manageable parts. In \LaTeX\, subsections are created using the \textbackslash{}subsection command, which also automatically numbers the subsection relative to the parent section.
 
 %----- Additional Features -----------------------------------------------------------------------
 
