@@ -425,7 +425,7 @@ y &= -x - 6
 
 \IEEEPARstart{T}{he} acknowledgments section is an important part of any academic paper or report. It is a space where the author can thank those who have contributed to the work but are not among the authors, including advisors; funding agencies; technical staff; or colleagues, to name a few. 
 
-In \LaTeX, an acknowledgments section can be included through using the \texttt{\textbackslash section\{Acknowledgments\}} command. Th section often comes just before the references section.
+In \LaTeX, an acknowledgments section can be included through using the \texttt{\textbackslash section\{Acknowledgments\}} command. The section often comes just before the references section.
 
 The use of the \texttt{\textbackslash section*\{Acknowledgments\}} command allows the writer to create a non-numbered section. The asterisk (*) next to \texttt{\textbackslash section} prevents the section number from appearing next to the title.
 
@@ -433,12 +433,22 @@ The use of the \texttt{\textbackslash section*\{Acknowledgments\}} command allow
 
 In a document, the acknowledgments should ideally appear after the conclusion and prior to the references. The placement ensures that the acknowledgments are easily found by readers but do not disrupt the flow of the paper's main content.
 
+\section{How to: References}
 
+\IEEEPARstart{M}{anaging} references in \LaTeX{} is efficient and allows for consistent citation formatting. This guide covers the \texttt{thebibliography} environment and key commands: \texttt{\textbackslash label}, \texttt{\textbackslash ref}, and \texttt{\textbackslash cite}.
 
-\end{document}
+\subsection{Thebibliography Environment}
+Listing references can be done within the the \texttt{thebibliography} environment, where each entry is defined by \texttt{\textbackslash bibitem}. The \texttt{thebibliography} environment acts as a list, where each reference is an item.
 
+\subsection{Using \textbackslash label and \textbackslash ref}
+In order to assign a label to figures, tables, or sections, please use the \texttt{\textbackslash label} command, and reference it using \texttt{\textbackslash ref}.
 
-\end{document}
+\subsection{Citing References}
+Use \texttt{\textbackslash cite} for citations in your text, referencing the label of the \texttt{\textbackslash bibitem}. 
+
+\subsection{Compiling the Document}
+In order to process references, the document should be compiled twice. The first pass collects the reference keys, and the second pass updates the citations.
+
 
 
 \end{document}
