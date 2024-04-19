@@ -396,19 +396,11 @@ In order to write one-half as a fraction, the following command should be used i
 
 This will appear as \( \frac{1}{2} \). 
 
-\subsection{Superscripts and Subscripts}
-Use the caret (^) for superscripts and the underscore (_) for subscripts:
-
-\begin{verbatim}
-\( x_i^2 \) represents \( x \) squared with subscript \( i \).
-\( 10^{10} \) represents 10 to the power of 10.
-\end{verbatim}
-
 \subsection{Complex Equations}
-LaTeX provides environments for complex equations involving matrices or multiple aligned equations.
+\LaTeX provides environments for complex equations involving matrices or multiple aligned equations.
 
 \subsubsection{Matrices}
-A simple 2x2 matrix looks like this:
+A 2x2 matrix would be written as the following. 
 
 \begin{verbatim}
 \begin{equation}
@@ -420,7 +412,7 @@ c & d \\
 \end{verbatim}
 
 \subsubsection{Aligned Equations}
-For equations that should be aligned at the equal sign:
+For equations that should be aligned at the equal sign, it would be written like this. 
 
 \begin{verbatim}
 \begin{align}
@@ -429,30 +421,58 @@ y &= -x - 6
 \end{align}
 \end{verbatim}
 
-\subsection{Examples}
-Finally, here are some examples utilizing various LaTeX math environments:
+\section{References}
+
+\IEEEPARstart{M}{anaging} references in \LaTeX is efficient and allows for consistent citation formatting. This guide covers the `thebibliography` environment and key commands: `\label`, `\ref`, and `\cite`.
+
+\subsection{Thebibliography Environment}
+List your references in the `thebibliography` environment, where each entry is a `\bibitem`:
 
 \begin{verbatim}
-\begin{equation}
-    {}_3F_2\left[\begin{array}{ccc} a, & b, & c \\ & d, & e \end{array} ; z\right]
-\end{equation}
+\begin{thebibliography}{9}
+\bibitem{latexcompanion}
+Michel Goossens, Frank Mittelbach, and Alexander Samarin,
+\textit{The LaTeX Companion},
+Addison-Wesley, Reading, Massachusetts, 1993.
 
-\begin{equation}
-    \frac{n!}{k!(n-k)!} = \binom{n}{k}
-\end{equation}
+\bibitem{einstein}
+Albert Einstein,
+\textit{Zur Elektrodynamik bewegter K{\"o}rper}, (German)
+[\textit{On the Electrodynamics of Moving Bodies}],
+Annalen der Physik, 322(10):891–921, 1905.
+\end{thebibliography}
 \end{verbatim}
 
-These render in your document as:
+Use the argument `{9}` if you expect less than 10 items, `{99}` for less than 100, and so on.
 
-\begin{equation}
-    {}_3F_2\left[\begin{array}{ccc} a, & b, & c \\ & d, & e \end{array} ; z\right]
-\end{equation}
+\subsection{Using \textbackslash label and \textbackslash ref}
+Assign a label to figures, tables, or sections with `\label`, and reference them using `\ref`:
 
-\begin{equation}
-    \frac{n!}{k!(n-k)!} = \binom{n}{k}
-\end{equation}
+\begin{verbatim}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{example_figure.png}
+  \caption{Example figure.}
+  \label{fig:example}
+\end{figure}
 
-These examples demonstrate the flexibility of LaTeX in handling complex mathematical structures, making it an essential tool for technical documentation.
+Refer to Figure~\ref{fig:example} to see an example.
+\end{verbatim}
+
+The `~` ensures that the figure number and the word 'Figure' stay connected.
+
+\subsection{Citing References}
+Use `\cite` for citations in your text, referencing the label of the `\bibitem`:
+
+\begin{verbatim}
+This result was first reported by Einstein~\cite{einstein}.
+\end{verbatim}
+
+\subsection{Compiling the Document}
+Compile your document twice to process references. The first pass collects the reference keys, and the second pass updates the citations.
+
+\end{document}
+
 
 \end{document}
 
