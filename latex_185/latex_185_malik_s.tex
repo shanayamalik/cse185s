@@ -421,55 +421,22 @@ y &= -x - 6
 \end{align}
 \end{verbatim}
 
-\section{References}
+\section{How to: Acknowledgments}
 
-\IEEEPARstart{M}{anaging} references in \LaTeX is efficient and allows for consistent citation formatting. This guide covers the `thebibliography` environment and key commands: `\label`, `\ref`, and `\cite`.
+\IEEEPARstart{T}{he} acknowledgments section is an important part of any academic paper or report. It is a space where the author can thank those who have contributed to the work but are not among the authors, including advisors; funding agencies; technical staff; or colleagues, to name a few. 
 
-\subsection{Thebibliography Environment}
-List your references in the `thebibliography` environment, where each entry is a `\bibitem`:
+In \LaTeX, an acknowledgments section can be included through using the \texttt{\textbackslash section\{Acknowledgments\}} command. Th section often comes just before the references section.
 
-\begin{verbatim}
-\begin{thebibliography}{9}
-\bibitem{latexcompanion}
-Michel Goossens, Frank Mittelbach, and Alexander Samarin,
-\textit{The LaTeX Companion},
-Addison-Wesley, Reading, Massachusetts, 1993.
+The use of the \texttt{\textbackslash section*\{Acknowledgments\}} command allows the writer to create a non-numbered section. The asterisk (*) next to \texttt{\textbackslash section} prevents the section number from appearing next to the title.
 
-\bibitem{einstein}
-Albert Einstein,
-\textit{Zur Elektrodynamik bewegter K{\"o}rper}, (German)
-[\textit{On the Electrodynamics of Moving Bodies}],
-Annalen der Physik, 322(10):891–921, 1905.
-\end{thebibliography}
-\end{verbatim}
+\subsection*{Placement of Acknowledgments}
 
-Use the argument `{9}` if you expect less than 10 items, `{99}` for less than 100, and so on.
+In a document, the acknowledgments should ideally appear after the conclusion and prior to the references. The placement ensures that the acknowledgments are easily found by readers but do not disrupt the flow of the paper's main content.
 
-\subsection{Using \textbackslash label and \textbackslash ref}
-Assign a label to figures, tables, or sections with `\label`, and reference them using `\ref`:
 
-\begin{verbatim}
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.5\textwidth]{example_figure.png}
-  \caption{Example figure.}
-  \label{fig:example}
-\end{figure}
 
-Refer to Figure~\ref{fig:example} to see an example.
-\end{verbatim}
+\end{document}
 
-The `~` ensures that the figure number and the word 'Figure' stay connected.
-
-\subsection{Citing References}
-Use `\cite` for citations in your text, referencing the label of the `\bibitem`:
-
-\begin{verbatim}
-This result was first reported by Einstein~\cite{einstein}.
-\end{verbatim}
-
-\subsection{Compiling the Document}
-Compile your document twice to process references. The first pass collects the reference keys, and the second pass updates the citations.
 
 \end{document}
 
