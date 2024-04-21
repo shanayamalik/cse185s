@@ -24,7 +24,6 @@
 
 \title{\LaTeX\ Tutorial}
 \author{Shanaya Malik}
-% The double backslash \\ is used here to enter a ''Carriage Return'', or a line break. Note that the tilde ~ in between my name used as a ''Nonbreaking Space''. LaTeX will not break a structure at a ~ so this keeps an author's name from being broken across two lines. Also note that I included my name as an example so make sure to only insert your name in this command.
 
 \date{}		% leaving the brackets empty omits the date
 % To input the current date, you can type: \date{\today}
@@ -58,23 +57,11 @@
 % use for special paper notices
 %\IEEEspecialpapernotice{(Invited Paper)}
 
-% for Computer Society papers, we must declare the abstract and index terms
-% PRIOR to the title within the \IEEEcompsoctitleabstractindextext IEEEtran
-% command as these need to go into the title area created by \maketitle.
-
 \IEEEcompsoctitleabstractindextext{%
 \begin{abstract}
 %\boldmath
 The tutorial offers an introduction to \LaTeX, a typesetting system that is particularly relevant within the academic community and often required for technical documentation. The key topics include handling of text, figures, tables, mathematical equations, and references.  The tutorial also emphasizes the importance of \LaTeX in ensuring document portability and the consistent representation of complex formats across various platforms.
 \end{abstract}
-
-% IEEEtran.cls defaults to using nonbold math in the Abstract.
-% This preserves the distinction between vectors and scalars. However,
-% if the journal you are submitting to favors bold math in the abstract,
-% then you can use LaTeX's standard command \boldmath at the very start
-% of the abstract to achieve this. Many IEEE journals frown on math
-% in the abstract anyway. In particular, the Computer Society does
-% not want either math or citations to appear in the abstract.
 
 % Note that keywords are not normally used for peerreview papers.
 \begin{IEEEkeywords}
@@ -85,54 +72,43 @@ CSE185, \LaTeX\ Tutorial, IEEEtran, journal, \LaTeX, paper, template.
 
 %----- The SECTION Environment -------------------------------------------------------------------
 
-% To create a section, simply type the command \section{} with the name of your section name inserted into the curly brackets {}. The section's body text follows underneath the \section{} command. 
-
 \section{Introduction}
 
 \IEEEPARstart{T}{his} tutorial is designed to introduce novice engineering students to \LaTeX\, a software system for typesetting documents widely used in academia and the professional engineering world. The tool operates on the principle that the writer focuses primarily on the content, using plain text and commands to control formatting.
 
-\subsection{Why Will this Tutorial be Helpful?}
+\subsection{Why is this Tutorial Helpful?}
 \LaTeX\ is meant for managing complex mathematical equations, tables, and figures, making it an ideal choice for technical documents. The tutorial will guide students through the process of creating documents that are visually professional and precisely formatted.
 
 \subsubsection{Why Should I Learn \LaTeX{}?}
-Familiarity with LaTeX allows students to produce well-structured reports and papers that adhere to the standards required in scientific communication. \LaTeX\ documents maintain consistency across different computing platforms, improving collaboration on projects. 
+If students are familiar with \LaTeX, it will allow for the development of well-structured scientific reports and papers. \LaTeX\ documents maintain consistency across different computing platforms, improving project collaboration. 
 
 %---- Additional Features ----
 \section{Creating a \LaTeX\ File}
-\IEEEPARstart{I}{n} order to create a '.tex' file, it is required to use a text editor, but no specialized software is needed. There are editors, such as Overleaf, which include \LaTeX\ syntax highlighting and integration, and optimize the process.
+\IEEEPARstart{I}{n} order to create a '.tex' file, it is required to use a text editor, but no specialized software is needed. Editors, such as Overleaf, include \LaTeX\ syntax highlighting and integration.
 
 \subsection{Environments}
+Environments in \LaTeX\ determine text formatting, and are represented as \texttt{\textbackslash begin} and \texttt{\textbackslash end} commands. It can be used for various purposes, such as itemizing lists, aligning text, or formatting mathematical expressions.
 
-Environments in \LaTeX\ determine the formatting of text, and are represented as \texttt{\textbackslash begin} and \texttt{\textbackslash end} commands. It can be used for a variety of purposes, such as itemizing lists; aligning text; or formatting mathematical expressions.
-
-\subsubsection{Begin}
-
-The \texttt{\textbackslash begin\{environment\}} command initiates the environment, where \texttt{environment} is the name of the environment you wish to use.  
-
-\subsubsection{End}
-
-The \texttt{\textbackslash end\{environment\}} command is used to signal the end of an environment. \LaTeX\ will stop applying the special formatting of the environment after this command.  
+\subsubsection{Begin and End}
+The \texttt{\textbackslash begin\{environment\}} command initiates the environment, where \texttt{environment} is the name of the environment you wish to use.  The \texttt{\textbackslash end\{environment\}} command signals the end of an environment. \LaTeX\ will stop applying the special formatting of the environment after this command.  
 
 \subsection{Reserved Characters}
+In \LaTeX\, there are some characters have special meanings and are 'reserved' for specific commands and functions. The characters include symbols, such as the backslash `\`, which indicates the start of a command, and the percent `\%`, which comments out text, to name a few. In order to display these characters as part of your text, the character must be escaped using specific commands. 
 
-In \LaTeX\, there are characters that have special meanings and are 'reserved' for specific commands and functions. The characters include symbols, such as the backslash `\`, which indicates the start of a command, and the percent `\%`, which comments out text, to name a few. In order to display these characters as part of your text, the character must be escaped using specific commands. 
+\subsubsection{Why are these Reserved?}
+There are reserved characters in \LaTeX\, which serve specific functions in the typesetting process, such as invoking commands or formatting text. The characters cannot be used directly to display the literal symbols without being escaped.
 
-\subsubsection{Why are these reserved?}
-
-Reserved characters in \LaTeX\ serve specific functions in the typesetting process, such as invoking commands or formatting text. The characters cannot be used directly to display the literal symbols without being escaped.
-
-\subsubsection{Explain the functions of these characters: \textbackslash , \textasciitilde , \textbackslash\textbackslash , \%}
+\subsubsection{Explain the Functions of the Characters: \textbackslash , \textasciitilde , \textbackslash\textbackslash , \%}
 
 \begin{itemize}
-    \item \textbackslash : Introduces a command or a LaTeX keyword.
-    \item \textasciitilde : Produces a non-breakable space.
-    \item \textbackslash\textbackslash : Creates a new line or a line break.
-    \item \% : Starts a comment, which makes \LaTeX\ ignore the rest of the text on the line.
+    \item \textbackslash: Introduces a command or a \LaTeX keyword.
+    \item \textasciitilde: Produces a non-breakable space.
+    \item \textbackslash\textbackslash: Creates a new line.
+    \item \% : Starts a comment.
 \end{itemize}
 
-\subsubsection{What if you want to display these characters?}
-
-In order to display reserved characters in the text, there is a specific set of commands that tells \LaTeX\ to treat those as regular characters and not as commands or special symbols.
+\subsubsection{What if you Want to Display these Characters?}
+In order to display reserved characters in the text, a specific set of commands tells \LaTeX to treat those as regular characters and not as commands or special symbols.
 
 \begin{itemize}
     \item To display a backslash, use \texttt{\textbackslash textbackslash}.
@@ -142,65 +118,46 @@ In order to display reserved characters in the text, there is a specific set of 
 \end{itemize}
 
 \subsection{Preamble}
-
-The preamble of a LaTeX document is the section where you define the global settings and include the necessary packages that affect the entire document. It starts right after the \textbackslash documentclass command and continues until the \textbackslash begin\{document\} command. The preamble sets up elements such as the document type, packages, custom commands, and other configurations needed for the document.
+The preamble of a \LaTeX document is the section where you define the global settings and include the necessary packages that affect the entire document. It starts right after the \textbackslash documentclass command and continues until the \textbackslash begin\{document\} command. The preamble sets up elements such as the document type, packages, custom commands, and other configurations needed.
 
 \subsubsection{\textbackslash documentclass[] and class files}
-
-The \textbackslash documentclass[] command is the first line in a \LaTeX\ file, and it defines the layout and style of the document. The options within the square brackets set global parameters such as font size, paper size, and whether the document is one-sided or two-sided. There are also class files, which are are predefined settings that format the document according to the type of content. 
+The \textbackslash documentclass[] command is the first line in a \LaTeX\ file, and it defines the layout and style of the document. The options within the square brackets set global parameters such as font size, paper size, and whether the document is one-sided or two-sided. There are also class files, which are predefined settings that format the document according to the type of content. 
 
 \subsubsection{Packages}
 
-Packages in \LaTeX\ are extensions that add functionality to the typesetting system. The packages are included in the preamble using the \textbackslash usepackage\{name\} command, and provide additional fonts, macros, or enable the document to handle complex tasks, such as advanced mathematical formatting, inserting images, handling links, or modifying the layout. 
+Packages in \LaTeX\ are extensions that add functionality to the typesetting system. The packages are included in the preamble using the \textbackslash usepackage\{name\} command and provide additional fonts and macros or enable the document to handle complex tasks, such as advanced mathematical formatting, inserting images, handling links, or modifying the layout. 
 
-\subsubsection{\textbackslash begin\{document\} and \textbackslash end\{document\}}
-
-The \textbackslash begin\{document\} command marks the beginning of the document's content section. If there is any text prior to this command, it is considered to be a part of the preamble.  In comparison, the \textbackslash end\{document\} command is used to signify the end of the document. If there is anything written after this command, it will not be processed.
+\subsubsection{Begin and End Document}
+The \textbackslash begin\{document\} command marks the beginning of the document's content section. If there is any text before this command, it is considered to be a part of the preamble.  In comparison, the \textbackslash end\{document\} command is used to signify the end of the document. If there is anything written after this command, it will not be processed.
 
 \subsection{Title and Heading Information}
-
-The title, author, and date are important components in most, if not all, of the document types. In \LaTeX\, the elements are often declared in the preamble and displayed in the document through a specific command.
-
-\subsubsection{Title, Author, and Date}
-
-In \LaTeX\, the title, author, and date of the document can be specified using the `\title{}`, `\author{}`, and `\date{}` commands, respectively. The commands are used in the preamble to store this information, which can later be displayed on the document's title page or any other appropriate location. 
+The title, author, and date are elements declared in the preamble and displayed in the document through a specific command.
 
 \subsubsection{\textbackslash maketitle command}
-
 If the title, author, and date have been set in the preamble, it can use the `\maketitle` command within the document body to generate a title page with this information. The `\textbackslash{}maketitle` command uses the information provided by `\textbackslash{}title`, `\textbackslash{}author`, and `\textbackslash{}date` to format a standard title page according to the document class being used. The `\textbackslash{}maketitle` command is flexible and will automatically adjust the formatting of the title page based on the document class and any packages that might influence title page formatting. 
 
 \section{Sections}
-\IEEEPARstart{I}{n} a \LaTeX\ document, sections are major divisions and are created using the \textbackslash{}section command. This command numbers the sections and includes it in the document’s Table of Contents, if one is being used. The sections serve to help organize content into distinct parts, making the document easier to read and navigate.
+\IEEEPARstart{I}{n} a \LaTeX\ document, sections are major divisions and are created using the \textbackslash{}section command. This command numbers the sections and includes it in the document’s Table of Contents.
 
 \subsection{Subsections}
-
-There are subsections, which are used to create smaller divisions within a section. The subsections are useful for breaking down complex information into manageable parts. In \LaTeX\, subsections are created using the \textbackslash{}subsection command, which also automatically numbers the subsection relative to the parent section.
+There are subsections, which are used to create smaller divisions within a section. In \LaTeX\, subsections are created using the \textbackslash{}subsection command.
 
 \section{Body Text: Paragraphs and Content}
-\IEEEPARstart{T}{he} body text of a document is important as it includes the main message(s) and information. In order to make the document more readable and presentation, it is important to ensure the roper management of paragraphs and content. 
-
-\subsection{Paragraphs}
-In a \LaTeX\ text document, paragraphs are fundamental, and created by leaving a blank line between two blocks of text. This is preferable to using multiple backslashes (\\) which is a common mistake for novice engineers. The default for \LaTeX\ is that it indents the first line of each paragraph, except for those following a section heading. The behavior can be altered by changing the length of \texttt{\textbackslash parindent} for indentation and \texttt{\textbackslash parskip} for vertical spacing between paragraphs.  
+\IEEEPARstart{T}{he} body text of a document is essential as it includes the main message(s) and information. In a \LaTeX text document, paragraphs are fundamental, and created by leaving a blank line between two blocks of text. The behavior can be altered by changing the length of \texttt{\textbackslash parindent} for indentation and \texttt{\textbackslash parskip} for vertical spacing between paragraphs.  
 
 \subsubsection{Indentation and Spacing}
-The text in \LaTeX\ is justified as the default, meaning that the lines stretch to align both on the left and right margin. If needed, text alignment can be changed to left-aligned, right-aligned, or centered using specific environments or packages.
+The text in \LaTeX\ is justified as the default, meaning that the lines stretch to be left-aligned (\texttt{l}), centered (\texttt{c}), or right-aligned (\texttt{r}).
 
 \subsection{Content Blocks and Quotations}
-
-For longer quotes or content that needs to stand out, the \texttt{quote} and \texttt{quotation} environments can be used. These provide a visual distinction from the rest of the text, indenting the content from the main body.
+The \texttt{quote} and \texttt{quotation} environments can be used. These provide a visual distinction from the rest of the text, indenting the content from the main body.
 
 \section{Tables}
-
-\IEEEPARstart{T}{he} creation and management of tables in \LaTeX\ involve a combination of the \texttt{table} and \texttt{tabular} environments, as well as specific formatting commands.
+\IEEEPARstart{T}{he} creation and management of tables in \LaTeX\ involve a combination of the \texttt{table} and \texttt{tabular} environments.
 
 \subsection{Difference Between Table and Tabular Environments}
-
-The \texttt{\textbackslash begin\{table\}} environment is used to add a floating table structure, which can include a caption or a label for referencing, and it allows the table to be positioned in a specific location. This is particularly useful when the document's layout and formatting require the table to not disrupt the text.
-
-In comparison, the \texttt{\textbackslash begin\{tabular\}} environment is where the data of the table is inputted and formatted. It defines the number of columns and whether the content of each column is left-aligned (\texttt{l}), centered (\texttt{c}), or right-aligned (\texttt{r}).
+The \texttt{\textbackslash begin\{table\}} environment is used to add a floating table structure, which can include a caption or a label for referencing. This is particularly useful when the document's layout and formatting require the table not to disrupt the text. The \texttt{\textbackslash begin\{tabular\}} environment is where the table data is inputted and formatted. 
 
 \subsection{Characters and Symbols in Tables}
-
 In the \texttt{tabular} environment, the following symbols and characters are often used:
 \begin{itemize}
     \item \texttt{l}, \texttt{c}, \texttt{r} represent column text alignment (left, center, right).
@@ -210,27 +167,10 @@ In the \texttt{tabular} environment, the following symbols and characters are of
 \end{itemize}
 
 \subsection{Entering Content}
-
 In order to enter content into a table, each cell is separated by an ampersand (\texttt{\&}), and each row is concluded with a double backslash (\texttt{\textbackslash\textbackslash}). 
 
-\subsection{Example of a Table}
-
-The following is an example of a basic table in \LaTeX\ which includes two columns and three rows. 
-
-\begin{table}[h]
-\centering
-\caption{An Example Table}
-\label{tab:example}
-\begin{tabular}{|l|c|}
-\hline
-\textbf{Left-Aligned Header} & \textbf{Centered Header} \\ \hline
-Data 1                       & Description 1            \\ \hline
-Data 2                       & Description 2            \\ \hline
-Data 3                       & Description 3            \\ \hline
-\end{tabular}
-\end{table}
-
-In order to create the above table, the \texttt{table} and \texttt{tabular} environments can be used.  
+\subsection{Process of Creating a Table}
+The following is an example of a basic table in \LaTeX\, which includes two columns and three rows. The \texttt{table} and \texttt{tabular} environments can be used.  
 
 \begin{enumerate}
     \item The \texttt{table} environment should be initiated with a \texttt{\textbackslash begin\{table\}} command, to create a floating table.
@@ -243,8 +183,21 @@ In order to create the above table, the \texttt{table} and \texttt{tabular} envi
     \item The \texttt{table} and \texttt{tabular} environments can be closed with \texttt{\textbackslash end\{table\}} and \texttt{\textbackslash end\{table\}} respectively.
 \end{enumerate}
 
+\begin{table}[h]
+\centering
+\caption{An Example Table}
+\label{tab:example}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Left-Aligned Header} & \textbf{Centered Header} \\ \hline
+Data 1                       & Analysis 1            \\ \hline
+Data 2                       & Analysis 2            \\ \hline
+Data 3                       & Analysis 3            \\ \hline
+\end{tabular}
+\end{table}
+
 \section{Figures}
-\IEEEPARstart{F}{igures} are an important aspect of scientific documentation, as it allows for the visual representation of data. In \LaTeX, the handling of figures is sophisticated, giving the writer the ability to control the figure's placement, orientation, and format. 
+\IEEEPARstart{F}{igures} are an important aspect of scientific documentation, as it allows for the visual representation of data.  
 
 \subsection{Including the Graphicx Package}
 The \texttt{graphicx} package is relevant for managing images in \LaTeX. It should be included in the preamble, enabling commands such as \texttt{\textbackslash includegraphics}. The following line can be added at the beginning of the \LaTeX document, before \texttt{\textbackslash begin\{document\}}:
@@ -253,8 +206,7 @@ The \texttt{graphicx} package is relevant for managing images in \LaTeX. It shou
 \end{verbatim}
 
 \subsection{Inserting a Figure}
-
-In order to add a figure to your document, use the \texttt{figure} environment. The environment allows the writer to include images, provide captions, and ensure figures are properly positioned, which is outlined as the following. 
+In order to add a figure to your document, use the \texttt{figure} environment. The environment allows the writer to include images, provide captions, and ensure figures are correctly positioned.
 
 \begin{itemize}
   \item The figure environment with placement specifiers is started with \texttt{\textbackslash begin\{figure\}[ht]}. 
@@ -276,10 +228,10 @@ In order to add a figure to your document, use the \texttt{figure} environment. 
 In \LaTeX, graphs can be created using the \texttt{pgfplots} package, or can include a pre-made graph using \texttt{\textbackslash includegraphics}.
 
 \subsection{Including a Meaningful Caption}
-The usage of captions is that it provides context and explains the significance of the figure or graph, which can be initated with \texttt{\textbackslash caption} and followed with the description.
+The usage of captions is that it provides context and explain the significance of the figure or graph, which can be initiated with \texttt{\textbackslash caption} and followed with the description.
 
 \subsection{Referencing the Graph in Text}
-In order to reference the figure in the text, it can be done using the \texttt{\textbackslash ref} command with the label assigned to the figure. This enables a dynamic reference to the number assigned by \LaTeX during compilation.
+In order to reference the figure in the text, it can be done using the \texttt{\textbackslash ref} command with the label assigned to the figure.
 
 \section{Mathematical Formulas}
 
