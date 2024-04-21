@@ -432,3 +432,161 @@ In order to process references, the document should be compiled twice. The first
 
 \section*{Acknowledgments}
 
+\IEEEPARstart{T}{he} author would like to express gratitude to the individuals and resources that were helpful in the completion of this assignment. This includes the teaching assistant, Kevin Bowden, of the CSE 185S class at UCSC, whose guidance has been valuable in better introducing the topic of the assignment. Professor Gerald Moulds has also provided insightful instruction in the Technical Writing for Engineers course, which has improved the author's understanding and application of technical communication principles, particularly in the subject. In addition, Professor David Draper of the STAT 131 class, Introduction to Probability Theories, at UCSC, provided a brief introduction to \LaTeX\ allowed the author to discover the tool for scientific documentation. The creators of Overleaf have provided a comprehensive tutorial that, while not directly cited, was read and appreciated for the clear explanation and practical examples that facilitated a deeper understanding of how to use \LaTeX\ for document preparation.
+
+\begin{thebibliography}{1}
+
+\bibitem{OverleafTutorials}
+Overleaf. (n.d.). \textit{Learn LaTeX in 30 minutes}. Retrieved from \url{https://www.overleaf.com/learn/latex/Tutorials}
+
+\end{thebibliography}
+
+
+\end{document}
+
+%----- Additional Features -----------------------------------------------------------------------
+
+\section{Additional Features}
+
+\subsection{Figures}
+% FIGURES:
+
+% Note the FIGURE Environment created by the \begin{figure} and \end{figure} commands.
+
+\begin{figure}[h] 	% There are several different modifiers that can be used in [].
+\centering
+\includegraphics[width=1.5in]{slug.pdf}
+\caption{Sammy the Slug}
+\label{fig_slug}
+\end{figure}
+
+% You will need to use appropriate file types for figures and will also need to include that image file in the same folder as your .tex file. 
+
+%-------------------------------------------------------------------------------------------------
+\subsection{Label, Cite, and Ref Commands}
+You will need to be able to define and explain how to use the following commands:
+\begin{verbatim} \label{fig_slug} \end{verbatim} as it appears in the figure environment\\
+\begin{verbatim} \cite{IEEEhowto:kopka} \end{verbatim} appears like: \cite{IEEEhowto:kopka}\\
+\begin{verbatim} \ref{fig_slug} \end{verbatim} appears like: \ref{fig_slug}\\
+
+% IMPORTANT NOTE: In order to assign the correct reference number to each label, you may have to compile your code twice. 
+
+%-------------------------------------------------------------------------------------------------
+\subsection{Tables}
+An example of a floating table.
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+\begin{table}[h]
+%% increase table row spacing, adjust to taste
+\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+%\extrarowheight as needed to properly center the text within the cells
+\caption{An Example of a Table}
+\label{table_example}
+\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+\begin{tabular}{|c||c|}
+\hline
+One & Two\\
+\hline
+Three & Four\\
+\hline
+\end{tabular}
+\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals use top floats exclusively.
+% However, Computer Society journals sometimes do use bottom floats - bear
+% this in mind when choosing appropriate optional arguments for the
+% figure/table environments.
+% Note that, LaTeX2e, unlike IEEE journals, places footnotes above bottom
+% floats. This can be corrected via the \fnbelowfloat command of the
+% stfloats package.
+
+
+\section{Conclusion}
+Conclusion goes here.
+
+%----- APPENDICES --------------------------------------------------------------------------------
+\appendices
+\section{Appendix Title}
+Appendix one text goes here.
+
+% you can choose not to have a title for an appendix
+% if you want by leaving the argument blank
+\section{}
+Appendix two text goes here.
+
+
+%----- ACKNOWLEDGEMENT SECTION -------------------------------------------------------------------
+% Explain what the asterisk * does in the next line: 
+\section*{Acknowledgements}
+
+The author would like to thank...\\ \\
+
+Reminder: you will need to explain how to include an Acknowledgement Section and then include your own Acknowledgement Section at the end of your own tutorial. Same applies for the References/Bibliography.
+
+
+%----- BIBLIOGRAPHY ------------------------------------------------------------------------------
+
+% You will need to explain how to include the bibliography section as follows. Explain the environment and how to add new items.
+% Including how \ref, \cite and \label should be included here.
+
+% Reminder: you will need to explain how to include the Bibliography Section and then include your own Bibliography at the end of your own tutorial.
+
+\begin{thebibliography}{1}
+
+\bibitem{IEEEhowto:kopka}
+H.~Kopka and P.~W. Daly, \emph{A Guide to {\LaTeX}}, 3rd~ed.\hskip 1em plus
+  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+\end{thebibliography}
+
+%----- Optional: BIOGRAPHY Section ---------------------------------------------------------------
+ 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Gerald Moulds}
+% or if you just want to reserve a space for a photo:
+
+\begin{IEEEbiography}{Gerald Moulds}
+Biography text here.
+\end{IEEEbiography}
+
+% if you will not have a photo at all:
+\begin{IEEEbiographynophoto}{John Doe}
+Biography text here.
+\end{IEEEbiographynophoto}
+
+% insert where needed to balance the two columns on the last page with
+% biographies
+%\newpage
+
+\begin{IEEEbiographynophoto}{Jane Doe}
+Biography text here.
+\end{IEEEbiographynophoto}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+\end{document}
