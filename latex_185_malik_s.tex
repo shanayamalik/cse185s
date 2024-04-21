@@ -78,7 +78,7 @@ The tutorial offers an introduction to \LaTeX, a typesetting system that is part
 
 % Note that keywords are not normally used for peerreview papers.
 \begin{IEEEkeywords}
-CMPE185, \LaTeX\ Tutorial, IEEEtran, journal, \LaTeX, paper, template.
+CSE185, \LaTeX\ Tutorial, IEEEtran, journal, \LaTeX, paper, template.
 \end{IEEEkeywords}}
 
 \maketitle
@@ -88,59 +88,13 @@ CMPE185, \LaTeX\ Tutorial, IEEEtran, journal, \LaTeX, paper, template.
 % To create a section, simply type the command \section{} with the name of your section name inserted into the curly brackets {}. The section's body text follows underneath the \section{} command. 
 
 \section{Introduction}
-% Computer Society journal papers do something a tad strange with the very
-% first section heading (almost always called "Introduction"). They place it
-% ABOVE the main text! IEEEtran.cls currently does not do this for you.
-% However, You can achieve this effect by making LaTeX jump through some
-% hoops via something like:
-%
-%\ifCLASSOPTIONcompsoc
-%  \noindent\raisebox{2\baselineskip}[0pt][0pt]%
-%  {\parbox{\columnwidth}{\section{Introduction}\label{sec:introduction}%
-%  \global\everypar=\everypar}}%
-%  \vspace{-1\baselineskip}\vspace{-\parskip}\par
-%\else
-%  \section{Introduction}\label{sec:introduction}\par
-%\fi
-%
-% Admittedly, this is a hack and may well be fragile, but seems to do the
-% trick for me. Note the need to keep any \label that may be used right
-% after \section in the above as the hack puts \section within a raised box.
 
+\IEEEPARstart{T}{his} tutorial is designed to introduce novice engineering students to \LaTeX\, a software system for typesetting documents widely used in academia and the professional engineering world. The tool operates on the principle that the writer focuses primarily on the content, using plain text and commands to control formatting.
 
+\subsection{Why Will this Tutorial be Helpful?}
+\LaTeX\ is meant for managing complex mathematical equations, tables, and figures, making it an ideal choice for technical documents. The tutorial will guide students through the process of creating documents that are visually professional and precisely formatted.
 
-% The very first letter is a 2 line initial drop letter followed
-% by the rest of the first word in caps (small caps for compsoc).
-% 
-% form to use if the first word consists of a single letter:
-% \IEEEPARstart{A}{demo} file is ....
-% 
-% form to use if you need the single drop letter followed by
-% normal text (unknown if ever used by IEEE):
-% \IEEEPARstart{A}{}demo file is ....
-% 
-% Some journals put the first two words in caps:
-% \IEEEPARstart{T}{his demo} file is ....
-% 
-% Here we have the typical use of a "T" for an initial drop letter
-% and "HIS" in caps to complete the first word.
-
-\IEEEPARstart{T}{his} tutorial is designed to introduce novice engineering students to \LaTeX\, a software system for typesetting documents, which is widely used in both academia and the professional engineering world. The tool operates on a principle that allows the writer to focus primarily on the content, using plain text and commands to control formatting.
-% You must have at least 2 lines in the paragraph with the drop letter
-% (should never be an issue)
-
-% Creating a subsection is similar to creating a section and is used with the command \subsection{}.
-
-\subsection{Why will this tutorial be helpful?}
-\LaTeX\ is meant for managing complex mathematical equations, tables, and figures, making it an ideal choice for engineering documents. The tutorial will guide students through the process of creating documents that are not only visually professional but also precisely formatted.
-
-% needed in second column of first page if using \IEEEpubid
-%\IEEEpubidadjcol
-
-% Creating a subsubsection:
-
-%\subsubsection{Why should I learn \LaTeX\?}
-\subsubsection{Why should I learn \LaTeX{}?}
+\subsubsection{Why Should I Learn \LaTeX{}?}
 Familiarity with LaTeX allows students to produce well-structured reports and papers that adhere to the standards required in scientific communication. \LaTeX\ documents maintain consistency across different computing platforms, improving collaboration on projects. 
 
 %---- Additional Features ----
