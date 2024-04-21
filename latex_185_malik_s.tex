@@ -1,0 +1,434 @@
+% \documentclass{} precedes the preamble and is typically the first command in any .tex document. Every .tex document should include this command as it defines what kind of document you intend on creating. Modifiers in square brackets [] can be added in between the text ''documentclass'' and the curly brackets {} to modify font size, templates, etc. 
+
+\documentclass[12pt,journal,compsoc]{IEEEtran}
+
+%-----PACKAGES-------------------------------------------------------------------------------------
+
+% Packages include extra commands that allow for additional formatting, ranging from Graphics, Math, to Alignment. The command to include packages will always look similar to \usepackage{} where the package name is within the curly brackets {}. Packages are defined in the preamble, i.e., between the \documentclass{} and \begin{document} commands.
+
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{geometry}
+
+%----- The DOCUMENT Environment-------------------------------------------------------------------
+
+% The \begin{document} and \end{document} commands establish the environment for the text of the document. The \begin{} and \end{} commands are used repeatedly in LaTeX to show where an environment begins and ends. The \end{document} command will be the last line of this .tex file.
+
+\begin{document}
+
+% The following commands are self explanatory. Insert your title, author and date into each command's curly bracket. You can include the abstract, paper header and paper footer information in this section then conclude the section with the command \maketitle (shown as the last line at the end of this section).
+
+\title{\LaTeX\ Tutorial}
+\author{Shanaya Malik}
+% The double backslash \\ is used here to enter a ''Carriage Return'', or a line break. Note that the tilde ~ in between my name used as a ''Nonbreaking Space''. LaTeX will not break a structure at a ~ so this keeps an author's name from being broken across two lines. Also note that I included my name as an example so make sure to only insert your name in this command.
+
+\date{}		% leaving the brackets empty omits the date
+% To input the current date, you can type: \date{\today}
+
+% The paper headers
+\markboth{\LaTeX\ Tutorial}%
+{Moulds \MakeLowercase{\textit{et al.}}: CMPE185}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+% The publisher's ID mark at the bottom of the page is less important with
+% Computer Society journal papers as those publications place the marks
+% outside of the main text columns and, therefore, unlike regular IEEE
+% journals, the available text space is not reduced by their presence.
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% or like this to get the Computer Society new two part style.
+%\IEEEpubid{\makebox[\columnwidth]{\hfill 0000--0000/00/\$00.00~\copyright~2007 IEEE}%
+%\hspace{\columnsep}\makebox[\columnwidth]{Published by the IEEE Computer Society\hfill}}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark (Computer Society jorunal
+% papers don't need this extra clearance.)
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+% for Computer Society papers, we must declare the abstract and index terms
+% PRIOR to the title within the \IEEEcompsoctitleabstractindextext IEEEtran
+% command as these need to go into the title area created by \maketitle.
+
+\IEEEcompsoctitleabstractindextext{%
+\begin{abstract}
+%\boldmath
+The tutorial offers an introduction to \LaTeX, a typesetting system that is particularly relevant within the academic community and often required for technical documentation. The key topics include handling of text, figures, tables, mathematical equations, and references.  The tutorial also emphasizes the importance of \LaTeX in ensuring document portability and the consistent representation of complex formats across various platforms.
+\end{abstract}
+
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the journal you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals frown on math
+% in the abstract anyway. In particular, the Computer Society does
+% not want either math or citations to appear in the abstract.
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+CMPE185, \LaTeX\ Tutorial, IEEEtran, journal, \LaTeX, paper, template.
+\end{IEEEkeywords}}
+
+\maketitle
+
+%----- The SECTION Environment -------------------------------------------------------------------
+
+% To create a section, simply type the command \section{} with the name of your section name inserted into the curly brackets {}. The section's body text follows underneath the \section{} command. 
+
+\section{Introduction}
+% Computer Society journal papers do something a tad strange with the very
+% first section heading (almost always called "Introduction"). They place it
+% ABOVE the main text! IEEEtran.cls currently does not do this for you.
+% However, You can achieve this effect by making LaTeX jump through some
+% hoops via something like:
+%
+%\ifCLASSOPTIONcompsoc
+%  \noindent\raisebox{2\baselineskip}[0pt][0pt]%
+%  {\parbox{\columnwidth}{\section{Introduction}\label{sec:introduction}%
+%  \global\everypar=\everypar}}%
+%  \vspace{-1\baselineskip}\vspace{-\parskip}\par
+%\else
+%  \section{Introduction}\label{sec:introduction}\par
+%\fi
+%
+% Admittedly, this is a hack and may well be fragile, but seems to do the
+% trick for me. Note the need to keep any \label that may be used right
+% after \section in the above as the hack puts \section within a raised box.
+
+
+
+% The very first letter is a 2 line initial drop letter followed
+% by the rest of the first word in caps (small caps for compsoc).
+% 
+% form to use if the first word consists of a single letter:
+% \IEEEPARstart{A}{demo} file is ....
+% 
+% form to use if you need the single drop letter followed by
+% normal text (unknown if ever used by IEEE):
+% \IEEEPARstart{A}{}demo file is ....
+% 
+% Some journals put the first two words in caps:
+% \IEEEPARstart{T}{his demo} file is ....
+% 
+% Here we have the typical use of a "T" for an initial drop letter
+% and "HIS" in caps to complete the first word.
+
+\IEEEPARstart{T}{his} tutorial is designed to introduce novice engineering students to \LaTeX\, a software system for typesetting documents, which is widely used in both academia and the professional engineering world. The tool operates on a principle that allows the writer to focus primarily on the content, using plain text and commands to control formatting.
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+
+% Creating a subsection is similar to creating a section and is used with the command \subsection{}.
+
+\subsection{Why will this tutorial be helpful?}
+\LaTeX\ is meant for managing complex mathematical equations, tables, and figures, making it an ideal choice for engineering documents. The tutorial will guide students through the process of creating documents that are not only visually professional but also precisely formatted.
+
+% needed in second column of first page if using \IEEEpubid
+%\IEEEpubidadjcol
+
+% Creating a subsubsection:
+
+%\subsubsection{Why should I learn \LaTeX\?}
+\subsubsection{Why should I learn \LaTeX{}?}
+Familiarity with LaTeX allows students to produce well-structured reports and papers that adhere to the standards required in scientific communication. \LaTeX\ documents maintain consistency across different computing platforms, improving collaboration on projects. 
+
+%---- Additional Features ----
+\section{Creating a \LaTeX\ File}
+\IEEEPARstart{I}{n} order to create a '.tex' file, it is required to use a text editor, but no specialized software is needed. There are editors, such as Overleaf, which include \LaTeX\ syntax highlighting and integration, and optimize the process.
+
+\subsection{Environments}
+
+Environments in \LaTeX\ determine the formatting of text, and are represented as \texttt{\textbackslash begin} and \texttt{\textbackslash end} commands. It can be used for a variety of purposes, such as itemizing lists; aligning text; or formatting mathematical expressions.
+
+\subsubsection{Begin}
+
+The \texttt{\textbackslash begin\{environment\}} command initiates the environment, where \texttt{environment} is the name of the environment you wish to use.  
+
+\subsubsection{End}
+
+The \texttt{\textbackslash end\{environment\}} command is used to signal the end of an environment. \LaTeX\ will stop applying the special formatting of the environment after this command.  
+
+\subsection{Reserved Characters}
+
+In \LaTeX\, there are characters that have special meanings and are 'reserved' for specific commands and functions. The characters include symbols, such as the backslash `\`, which indicates the start of a command, and the percent `\%`, which comments out text, to name a few. In order to display these characters as part of your text, the character must be escaped using specific commands. 
+
+\subsubsection{Why are these reserved?}
+
+Reserved characters in \LaTeX\ serve specific functions in the typesetting process, such as invoking commands or formatting text. The characters cannot be used directly to display the literal symbols without being escaped.
+
+\subsubsection{Explain the functions of these characters: \textbackslash , \textasciitilde , \textbackslash\textbackslash , \%}
+
+\begin{itemize}
+    \item \textbackslash : Introduces a command or a LaTeX keyword.
+    \item \textasciitilde : Produces a non-breakable space.
+    \item \textbackslash\textbackslash : Creates a new line or a line break.
+    \item \% : Starts a comment, which makes \LaTeX\ ignore the rest of the text on the line.
+\end{itemize}
+
+\subsubsection{What if you want to display these characters?}
+
+In order to display reserved characters in the text, there is a specific set of commands that tells \LaTeX\ to treat those as regular characters and not as commands or special symbols.
+
+\begin{itemize}
+    \item To display a backslash, use \texttt{\textbackslash textbackslash}.
+    \item To display a tilde, use \texttt{\textbackslash textasciitilde} or place it inside math mode as \texttt{\$ \textasciitilde \$}.
+    \item To display double backslashes, use \texttt{\textbackslash textbackslash\textbackslash textbackslash}.
+    \item To display the percent sign, use \texttt{\textbackslash textpercent}.
+\end{itemize}
+
+\subsection{Preamble}
+
+The preamble of a LaTeX document is the section where you define the global settings and include the necessary packages that affect the entire document. It starts right after the \textbackslash documentclass command and continues until the \textbackslash begin\{document\} command. The preamble sets up elements such as the document type, packages, custom commands, and other configurations needed for the document.
+
+\subsubsection{\textbackslash documentclass[] and class files}
+
+The \textbackslash documentclass[] command is the first line in a \LaTeX\ file, and it defines the layout and style of the document. The options within the square brackets set global parameters such as font size, paper size, and whether the document is one-sided or two-sided. There are also class files, which are are predefined settings that format the document according to the type of content. 
+
+\subsubsection{Packages}
+
+Packages in \LaTeX\ are extensions that add functionality to the typesetting system. The packages are included in the preamble using the \textbackslash usepackage\{name\} command, and provide additional fonts, macros, or enable the document to handle complex tasks, such as advanced mathematical formatting, inserting images, handling links, or modifying the layout. 
+
+\subsubsection{\textbackslash begin\{document\} and \textbackslash end\{document\}}
+
+The \textbackslash begin\{document\} command marks the beginning of the document's content section. If there is any text prior to this command, it is considered to be a part of the preamble.  In comparison, the \textbackslash end\{document\} command is used to signify the end of the document. If there is anything written after this command, it will not be processed.
+
+\subsection{Title and Heading Information}
+
+The title, author, and date are important components in most, if not all, of the document types. In \LaTeX\, the elements are often declared in the preamble and displayed in the document through a specific command.
+
+\subsubsection{Title, Author, and Date}
+
+In \LaTeX\, the title, author, and date of the document can be specified using the `\title{}`, `\author{}`, and `\date{}` commands, respectively. The commands are used in the preamble to store this information, which can later be displayed on the document's title page or any other appropriate location. 
+
+\subsubsection{\textbackslash maketitle command}
+
+If the title, author, and date have been set in the preamble, it can use the `\maketitle` command within the document body to generate a title page with this information. The `\textbackslash{}maketitle` command uses the information provided by `\textbackslash{}title`, `\textbackslash{}author`, and `\textbackslash{}date` to format a standard title page according to the document class being used. The `\textbackslash{}maketitle` command is flexible and will automatically adjust the formatting of the title page based on the document class and any packages that might influence title page formatting. 
+
+\section{Sections}
+\IEEEPARstart{I}{n} a \LaTeX\ document, sections are major divisions and are created using the \textbackslash{}section command. This command numbers the sections and includes it in the document’s Table of Contents, if one is being used. The sections serve to help organize content into distinct parts, making the document easier to read and navigate.
+
+\subsection{Subsections}
+
+There are subsections, which are used to create smaller divisions within a section. The subsections are useful for breaking down complex information into manageable parts. In \LaTeX\, subsections are created using the \textbackslash{}subsection command, which also automatically numbers the subsection relative to the parent section.
+
+\section{Body Text: Paragraphs and Content}
+\IEEEPARstart{T}{he} body text of a document is important as it includes the main message(s) and information. In order to make the document more readable and presentation, it is important to ensure the roper management of paragraphs and content. 
+
+\subsection{Paragraphs}
+In a \LaTeX\ text document, paragraphs are fundamental, and created by leaving a blank line between two blocks of text. This is preferable to using multiple backslashes (\\) which is a common mistake for novice engineers. The default for \LaTeX\ is that it indents the first line of each paragraph, except for those following a section heading. The behavior can be altered by changing the length of \texttt{\textbackslash parindent} for indentation and \texttt{\textbackslash parskip} for vertical spacing between paragraphs.  
+
+\subsubsection{Indentation and Spacing}
+The text in \LaTeX\ is justified as the default, meaning that the lines stretch to align both on the left and right margin. If needed, text alignment can be changed to left-aligned, right-aligned, or centered using specific environments or packages.
+
+\subsection{Content Blocks and Quotations}
+
+For longer quotes or content that needs to stand out, the \texttt{quote} and \texttt{quotation} environments can be used. These provide a visual distinction from the rest of the text, indenting the content from the main body.
+
+\section{Tables}
+
+\IEEEPARstart{T}{he} creation and management of tables in \LaTeX\ involve a combination of the \texttt{table} and \texttt{tabular} environments, as well as specific formatting commands.
+
+\subsection{Difference Between Table and Tabular Environments}
+
+The \texttt{\textbackslash begin\{table\}} environment is used to add a floating table structure, which can include a caption or a label for referencing, and it allows the table to be positioned in a specific location. This is particularly useful when the document's layout and formatting require the table to not disrupt the text.
+
+In comparison, the \texttt{\textbackslash begin\{tabular\}} environment is where the data of the table is inputted and formatted. It defines the number of columns and whether the content of each column is left-aligned (\texttt{l}), centered (\texttt{c}), or right-aligned (\texttt{r}).
+
+\subsection{Characters and Symbols in Tables}
+
+In the \texttt{tabular} environment, the following symbols and characters are often used:
+\begin{itemize}
+    \item \texttt{l}, \texttt{c}, \texttt{r} represent column text alignment (left, center, right).
+    \item \texttt{|} represents a vertical line between columns.
+    \item \texttt{\textbackslash hline} is used to insert a horizontal line between rows.
+    \item \texttt{\textbackslash\textbackslash} ends a row and starts a new one.
+\end{itemize}
+
+\subsection{Entering Content}
+
+In order to enter content into a table, each cell is separated by an ampersand (\texttt{\&}), and each row is concluded with a double backslash (\texttt{\textbackslash\textbackslash}). 
+
+\subsection{Example of a Table}
+
+The following is an example of a basic table in \LaTeX\ which includes two columns and three rows. 
+
+\begin{table}[h]
+\centering
+\caption{An Example Table}
+\label{tab:example}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Left-Aligned Header} & \textbf{Centered Header} \\ \hline
+Data 1                       & Description 1            \\ \hline
+Data 2                       & Description 2            \\ \hline
+Data 3                       & Description 3            \\ \hline
+\end{tabular}
+\end{table}
+
+In order to create the above table, the \texttt{table} and \texttt{tabular} environments can be used.  
+
+\begin{enumerate}
+    \item The \texttt{table} environment should be initiated with a \texttt{\textbackslash begin\{table\}} command, to create a floating table.
+    \item The \texttt{\textbackslash centering} command will center the table. 
+    \item If the writer would like to add a caption, it can be done with \texttt{\textbackslash caption\{...\}}, whereas a label for referencing will start with \texttt{\textbackslash label\{...\}}.
+    \item The \texttt{tabular} environment can begin with \texttt{\textbackslash begin\{tabular\}\{...\}}, defining the alignment for each column.  
+    \item In order to insert horizontal lines before and after the header row, use \texttt{\textbackslash hline}. 
+    \item Enter the header row, bold the text with \texttt{\textbackslash textbf}, and separate columns with \texttt{\&}.
+    \item End each row with \texttt{\textbackslash\textbackslash} and add \texttt{\textbackslash hline} to insert a horizontal line after the row.
+    \item The \texttt{table} and \texttt{tabular} environments can be closed with \texttt{\textbackslash end\{table\}} and \texttt{\textbackslash end\{table\}} respectively.
+\end{enumerate}
+
+\section{Figures}
+\IEEEPARstart{F}{igures} are an important aspect of scientific documentation, as it allows for the visual representation of data. In \LaTeX, the handling of figures is sophisticated, giving the writer the ability to control the figure's placement, orientation, and format. 
+
+\subsection{Including the Graphicx Package}
+The \texttt{graphicx} package is relevant for managing images in \LaTeX. It should be included in the preamble, enabling commands such as \texttt{\textbackslash includegraphics}. The following line can be added at the beginning of the \LaTeX document, before \texttt{\textbackslash begin\{document\}}:
+\begin{verbatim}
+\usepackage{graphicx}
+\end{verbatim}
+
+\subsection{Inserting a Figure}
+
+In order to add a figure to your document, use the \texttt{figure} environment. The environment allows the writer to include images, provide captions, and ensure figures are properly positioned, which is outlined as the following. 
+
+\begin{itemize}
+  \item The figure environment with placement specifiers is started with \texttt{\textbackslash begin\{figure\}[ht]}. 
+  \item The \texttt{\textbackslash centering} command centers the figure in the text column.
+  \item In order to insert the image, the command, \texttt{\textbackslash includegraphics\{image.png\}}, should be used, where the path is replaced with the image file path. 
+  \item The following command will allow the writer to insert a caption, \texttt{\textbackslash caption\{...\}}.
+  \item In the text, the figure can be referenced with \texttt{\textbackslash label\{...\}}.
+\end{itemize}
+
+\subsubsection{Inserting a Titration Plot}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{Titration_Curve.png}
+  \caption{Table of pH Measurements at Incremental Volumes of Base Added During a Titration Process}
+  \label{fig:titrationplot}
+\end{figure}
+
+\subsection{Creating Graphs}
+In \LaTeX, graphs can be created using the \texttt{pgfplots} package, or can include a pre-made graph using \texttt{\textbackslash includegraphics}.
+
+\subsection{Including a Meaningful Caption}
+The usage of captions is that it provides context and explains the significance of the figure or graph, which can be initated with \texttt{\textbackslash caption} and followed with the description.
+
+\subsection{Referencing the Graph in Text}
+In order to reference the figure in the text, it can be done using the \texttt{\textbackslash ref} command with the label assigned to the figure. This enables a dynamic reference to the number assigned by \LaTeX during compilation.
+
+\section{Mathematical Formulas}
+
+\IEEEPARstart{M}{athematical} formulas are central to engineering and scientific documents. \LaTeX provides a system for typesetting complex mathematical equations and symbols.  
+
+\subsection{Equation Environments}
+\LaTeX uses two primary methods for displaying equations: inline and display. Inline equations appear within the text, while display equations are separated from the main text.
+
+\subsubsection{Inline Equations}
+Insert inline equations using dollar signs (\$). Einstein's energy-mass equivalence formula can be written inline like the following. 
+
+\( E = mc^2 \).
+
+\subsubsection{Display Equations}
+The display equations are separated from the text and often centered. The `equation` environment is used for that purpose.
+
+\begin{verbatim}
+\begin{equation}
+    E = mc^2
+\end{equation}
+\end{verbatim}
+
+It will appear in the \LaTeX document like this:
+
+\begin{equation}
+    E = mc^2
+\end{equation}
+
+\subsection{Symbols}
+\LaTeX supports an extensive array of mathematical symbols, including Greek letters \( \delta \); summation symbols \( \sum \); and integral symbols \( \int \).
+
+\subsection{Fractions}
+Fractions in LaTeX are created with the \textbackslash frac{} command, which takes the numerator and the denominator as arguments. 
+
+\begin{verbatim}
+\frac{numerator}{denominator}
+\end{verbatim}
+
+\subsubsection{Writing the Fraction One-Half}
+
+In order to write one-half as a fraction, the following command should be used in the \LaTeX document. 
+\begin{verbatim}
+\frac{1}{2}
+\end{verbatim}
+
+This will appear as \( \frac{1}{2} \). 
+
+\subsection{Complex Equations}
+\LaTeX provides environments for complex equations involving matrices or multiple aligned equations.
+
+\subsubsection{Matrices}
+A 2x2 matrix would be written as the following. 
+
+\begin{verbatim}
+\begin{equation}
+\begin{matrix}
+a & b \\
+c & d \\
+\end{matrix}
+\end{equation}
+\end{verbatim}
+
+\subsubsection{Aligned Equations}
+For equations that should be aligned at the equal sign, it would be written like this. 
+
+\begin{verbatim}
+\begin{align}
+y &= 2x + 3 \\
+y &= -x - 6
+\end{align}
+\end{verbatim}
+
+\section{How to: Acknowledgments}
+
+\IEEEPARstart{T}{he} acknowledgments section is an important part of any academic paper or report. It is a space where the author can thank those who have contributed to the work but are not among the authors, including advisors; funding agencies; technical staff; or colleagues, to name a few. 
+
+In \LaTeX, an acknowledgments section can be included through using the \texttt{\textbackslash section\{Acknowledgments\}} command. The section often comes just before the references section.
+
+The use of the \texttt{\textbackslash section*\{Acknowledgments\}} command allows the writer to create a non-numbered section. The asterisk (*) next to \texttt{\textbackslash section} prevents the section number from appearing next to the title.
+
+\subsection*{Placement of Acknowledgments}
+
+In a document, the acknowledgments should ideally appear after the conclusion and prior to the references. The placement ensures that the acknowledgments are easily found by readers but do not disrupt the flow of the paper's main content.
+
+\section{How to: References}
+
+\IEEEPARstart{M}{anaging} references in \LaTeX{} is efficient and allows for consistent citation formatting. This guide covers the \texttt{thebibliography} environment and key commands: \texttt{\textbackslash label}, \texttt{\textbackslash ref}, and \texttt{\textbackslash cite}.
+
+\subsection{Thebibliography Environment}
+Listing references can be done within the the \texttt{thebibliography} environment, where each entry is defined by \texttt{\textbackslash bibitem}. The \texttt{thebibliography} environment acts as a list, where each reference is an item.
+
+\subsection{Using \textbackslash label and \textbackslash ref}
+In order to assign a label to figures, tables, or sections, please use the \texttt{\textbackslash label} command, and reference it using \texttt{\textbackslash ref}.
+
+\subsection{Citing References}
+Use \texttt{\textbackslash cite} for citations in your text, referencing the label of the \texttt{\textbackslash bibitem}. 
+
+\subsection{Compiling the Document}
+In order to process references, the document should be compiled twice. The first pass collects the reference keys, and the second pass updates the citations.
+
+\section{Conclusion}
+
+\IEEEPARstart{T}{he} use and flexibility of \LaTeX allows for an improved form of technical documentation. The capabilities of the typesetting program allow for any engineer to become better prepared for both academic and professional communication. \LaTeX is an important part of being able to draft technical reports, theses, and research papers. 
+
+\section*{Acknowledgments}
+
