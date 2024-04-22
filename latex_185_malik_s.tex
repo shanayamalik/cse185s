@@ -23,7 +23,7 @@
 % The following commands are self explanatory. Insert your title, author and date into each command's curly bracket. You can include the abstract, paper header and paper footer information in this section then conclude the section with the command \maketitle (shown as the last line at the end of this section).
 
 \title{\LaTeX\ Tutorial}
-\author{Shanaya Malik}
+\author{Shanaya I. Malik}
 
 \date{}		% leaving the brackets empty omits the date
 % To input the current date, you can type: \date{\today}
@@ -169,18 +169,15 @@ In the \texttt{tabular} environment, the following symbols and characters are of
 \subsection{Entering Content}
 In order to enter content into a table, each cell is separated by an ampersand (\texttt{\&}), and each row is concluded with a double backslash (\texttt{\textbackslash\textbackslash}). 
 
-\subsection{Process of Creating a Table}
-The following is an example of a basic table in \LaTeX\, which includes two columns and three rows. The \texttt{table} and \texttt{tabular} environments can be used.  
+\subsection{Creating a Table in \LaTeX}
+The following is an example of a basic table in \LaTeX\, using the \texttt{table} and \texttt{tabular} environments.
 
 \begin{enumerate}
-    \item The \texttt{table} environment should be initiated with a \texttt{\textbackslash begin\{table\}} command, to create a floating table.
-    \item The \texttt{\textbackslash centering} command will center the table. 
-    \item If the writer would like to add a caption, it can be done with \texttt{\textbackslash caption\{...\}}, whereas a label for referencing will start with \texttt{\textbackslash label\{...\}}.
-    \item The \texttt{tabular} environment can begin with \texttt{\textbackslash begin\{tabular\}\{...\}}, defining the alignment for each column.  
-    \item In order to insert horizontal lines before and after the header row, use \texttt{\textbackslash hline}. 
-    \item Enter the header row, bold the text with \texttt{\textbackslash textbf}, and separate columns with \texttt{\&}.
-    \item End each row with \texttt{\textbackslash\textbackslash} and add \texttt{\textbackslash hline} to insert a horizontal line after the row.
-    \item The \texttt{table} and \texttt{tabular} environments can be closed with \texttt{\textbackslash end\{table\}} and \texttt{\textbackslash end\{table\}} respectively.
+    \item Please begin the floating table environment with \texttt{\textbackslash begin\{table\}} and center it using \texttt{\textbackslash centering}.
+    \item Include a caption with \texttt{\textbackslash caption\{...\}} and a label with \texttt{\textbackslash label\{...\}} for referencing.
+    \item Start the tabular environment with \texttt{\textbackslash begin\{tabular\}\{...\}} specifying column alignments.  
+    \item Define the header row using bold text (\texttt{\textbackslash textbf\{...\}}) and separate columns with \texttt{\&}. Terminate rows with \texttt{\textbackslash\textbackslash}.
+    \item Close both the \texttt{tabular} and \texttt{table} environments with \texttt{\textbackslash end\{tabular\}} and \texttt{\textbackslash end\{table\}} respectively.
 \end{enumerate}
 
 \begin{table}[h]
@@ -234,13 +231,12 @@ The usage of captions is that it provides context and explain the significance o
 In order to reference the figure in the text, it can be done using the \texttt{\textbackslash ref} command with the label assigned to the figure.
 
 \section{Mathematical Formulas}
-
 \IEEEPARstart{M}{athematical} formulas are central to engineering and scientific documents. \LaTeX provides a system for typesetting complex mathematical equations and symbols.  
 
 \subsection{Equation Environments}
 \LaTeX uses two primary methods for displaying equations: inline and display. Inline equations appear within the text, while display equations are separated from the main text.
 
-\subsubsection{Inline and Display Equations}
+\subsection{Inline and Display Equations}
 Insert inline equations using dollar signs (\$). The display equations are separated from the text and often centered. The `equation` environment is used for that purpose.
 
 \begin{verbatim}
@@ -254,6 +250,8 @@ It will appear in the \LaTeX document like this:
 \begin{equation}
     E = mc^2
 \end{equation}
+
+\section{Mathematical Formulas}
 
 \subsection{Symbols}
 \LaTeX supports an extensive array of mathematical symbols, including Greek letters \( \delta \); summation symbols \( \sum \); and integral symbols \( \int \).
@@ -273,7 +271,44 @@ In order to write one-half as a fraction, the following command should be used i
 
 This will appear as \( \frac{1}{2} \). 
 
-\subsubsection{Matrices}
+\subsection{Complex Equations}
+In order to write a complicated function in \LaTeX, use an array environment to organize the parameters of the function vertically and horizontally. 
+
+\subsubsection{Hypergeometric Function}
+The empty curly braces at the beginning are used to correctly align the subscripts and superscripts before the function symbol.
+
+\begin{verbatim}
+{}_{3}F_{2}\left
+[\begin{array}{ccc}
+a, & b, & c; \\
+   & d, & e; 
+\end{array} z\right]
+\end{verbatim}
+
+The code will produce the following hypergeometric function after compilation:
+
+\begin{equation}
+{}_{3}F_{2}\left[
+\begin{array}{ccc}
+a, & b, & c; \\
+   & d, & e; 
+\end{array} z\right]
+\end{equation}
+
+\subsubsection{Binomial Function}
+The binomial coefficient is can be written in \LaTeX using the \textbackslash frac command for fractions or the \textbackslash binom command for a more compact notation.  
+
+\begin{verbatim}
+\frac{n!}{k!(n-k)!} 
+= \binom{n}{k}
+\end{verbatim}
+
+This code will display the binomial coefficient like the following, when compiled:
+\begin{equation}
+\frac{n!}{k!(n-k)!} = \binom{n}{k}
+\end{equation}
+
+\subsection{Matrices}
 A 2x2 matrix would be written as the following. 
 
 \begin{verbatim}
@@ -295,22 +330,22 @@ In a document, the acknowledgments should ideally appear after the conclusion an
 \IEEEPARstart{M}{anaging} references in \LaTeX{} is efficient and allows for consistent citation formatting.  
 
 \subsection{Thebibliography Environment}
-Listing references can be done within the the \texttt{thebibliography} environment, where each entry is defined by \texttt{\textbackslash bibitem}. 
+Listing references can be done within the \texttt{thebibliography} environment, where each entry is defined by \texttt{\textbackslash bibitem}. 
 
 \subsection{Using \textbackslash label and \textbackslash ref}
 In order to assign a label to figures, tables, or sections, please use the \texttt{\textbackslash label} command and reference it using \texttt{\textbackslash ref}.
 
 \subsection{Citing References}
-For citations in the text, use the \texttt{\textbackslash bibitem} command. 
+For citations that are within the main text, use the \texttt{\textbackslash bibitem} command to illustrate the source. 
 
 \subsection{Compiling the Document}
-The document should be compiled twice to process references. The first pass collects the reference keys, and the second pass updates the citations.
+The document should be compiled twice to process references, as initially compiling it once can result in information not presenting correctly. The first pass collects the reference keys, and the second pass updates the citations.
 
 \section{Conclusion}
 \IEEEPARstart{T}{he} use and flexibility of \LaTeX allows for an improved form of technical documentation. The typesetting program's capabilities allow any engineer to become better prepared for academic and professional communication. 
 
 \section*{Acknowledgments}
-\IEEEPARstart{T}{he} author would like to express gratitude to the individuals and resources that were helpful in the completion of this assignment. This includes the teaching assistant, Kevin Bowden, of the CSE 185S class at UCSC, whose guidance was been valuable in introducing the subject matter. Professor Gerald Moulds provided insightful instruction in the Technical Writing for Engineers course, which has improved the author's understanding and application of technical communication principles. In addition, Professor David Draper of UCSC's STAT 131 class, Introduction to Probability Theories, was the first to introduce the author to \LaTeX. The creators of Overleaf have provided a comprehensive tutorial that was read and appreciated for the clear explanation and practical examples.
+\IEEEPARstart{T}{he} author would like to express gratitude to the individuals and resources that were helpful in the completion of this assignment. Thank you to Kevin Bowden, a Teaching Assistant of UCSC's CSE 185S. Professor Gerald Moulds provided insightful instruction, which has improved the author's understanding and application of technical communication principles. The creators of Overleaf have provided a comprehensive tutorial that was read and appreciated for the clear explanation and practical examples.
 
 \begin{thebibliography}{3}
 \bibitem{OverleafTutorials}
@@ -325,13 +360,3 @@ Stack Exchange. (n.d.). \textit{TeX - LaTeX Stack Exchange}. Retrieved from \url
 \end{thebibliography}
 
 \end{document}
-
-%----- APPENDICES --------------------------------------------------------------------------------
-\appendices
-\section{Appendix Title}
-Appendix one text goes here.
-
-% you can choose not to have a title for an appendix
-% if you want by leaving the argument blank
-\section{}
-Appendix two text goes here.
