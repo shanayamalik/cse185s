@@ -1,39 +1,19 @@
-%% latex_185_moulds_g.tex
-%%
-%% The following file is a skeleton file that demonstrates how to implement the IEEEtran.cls class 
-%% file in LaTeX. This file is intended for the CMPE185 Technical Writing for Engineers Course in 
-%% which the students must write a tutorial aimed towards novice LaTeX users in the LaTex environment.
-%%
-%% This file is heavily adapted from Michael Shell's bare_adv.tex file made available at 
-%% http://www.ieee.org/conferences_events/conferences/publishing/templates.html
-%%
-%% You will need to rename this file with your information in the following format:
-%% latex_185_last name_ first initial.tex
-%% ---------------------------------------------------------------------------------------------------
-
-% \documentclass{} precedes the preamble and is typically the first command in any .tex document. Every .tex document should include this command as it defines what kind of document you intend on creating. Modifiers in square brackets [] can be added in between the text ''documentclass'' and the curly brackets {} to modify font size, templates, etc. 
-
 \documentclass[12pt,journal,compsoc]{IEEEtran}
 
 %-----PACKAGES-------------------------------------------------------------------------------------
 
-% Packages include extra commands that allow for additional formatting, ranging from Graphics, Math, to Alignment. The command to include packages will always look similar to \usepackage{} where the package name is within the curly brackets {}. Packages are defined in the preamble, i.e., between the \documentclass{} and \begin{document} commands.
-
-% The following link takes you to a list of additional packages that may not be listed here. http://en.wikibooks.org/wiki/LaTeX/Package_Reference
-
-% TO INCLUDE PACKAGES: 
-% - Open the file ''latex_sample_packages.tex'' from the .zip folder.
-% - From this file, COPY the code for the package you want to include and PASTE into your own .tex file.
-% - Uncomment the package you want to include and load, i.e., remove the ''%'' in front of the \usepackage{package_name}.
- 
-
-% Copy package text here:
-
-\usepackage{graphicx}
-% This is an example of how a \usepackage{} command should be included. You will need to include more packages to complete this assignment.
-
-
-
+\usepackage{graphicx}        % For including graphics
+\usepackage{amsmath}         % For mathematical formulas
+\usepackage{cite}            % For citations
+\usepackage{hyperref}        % For hyperlinks
+\usepackage{array}           % For better arrays (e.g., matrices) in maths
+\usepackage{caption}         % For customizing captions
+\usepackage{subcaption}      % For subfigures
+\usepackage{booktabs}        % For better table formatting
+\usepackage{multicol}        % For multi-column text
+\usepackage{enumitem}        % For customizable list environments
+\usepackage{float}           % For improved float control
+\usepackage{lipsum}          % For placeholder text
 
 %----- The DOCUMENT Environment-------------------------------------------------------------------
 
