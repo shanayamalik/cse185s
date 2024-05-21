@@ -48,7 +48,7 @@ Adaptive, telemetry, systems, neonatal, neurodevelopment.
 \subsubsection{Overview of aEEG}
 The amplitude-integrated EEG (aEEG) has become a standard tool in neonatal neurological care. Initially developed in 1960 for adults, it was later modified for neonates to provide continuous monitoring of brain function. The aEEG is particularly useful for detecting seizures and assessing brain activity in neonates with hypoxia-ischemia and other neurological conditions \cite{IEEEhowto:toet}.
 
-\subsubsection{Practical Applications in Neonatal Care}
+\subsubsection{aEEG Applications in Neonatal Care}
 The aEEG is routinely used in neonatal intensive care units (NICUs) for several applications, including but not limited to the following. 
 
 \begin{itemize}
@@ -116,20 +116,19 @@ Introducing new monitoring technologies in neonatal care involves significant ri
 he implementation of a portable, low-cost EEG monitoring system using smartphone technology, which addresses the limitations and provide real-time brain health assessment through EEG sonification.
 
 \subsection{EEG Monitoring and Sonification}
-Electroencephalogram (EEG) monitoring is essential for understanding and tracking the electrical activity in the brain. The development of smartphone-based systems in collaboration with portable EEG acquisition devices addresses these challenges by offering a cost-effective and portable solution for EEG monitoring \cite{IEEEhowto:poveda}.
+Electroencephalogram (EEG) monitoring is essential for understanding and tracking the electrical activity in the brain. The development of smartphone-based systems in collaboration with portable EEG acquisition devices offers a cost-effective and portable solution for EEG monitoring \cite{IEEEhowto:poveda}.
 
 \subsubsection{Benefits of Sonification}
 The sonification of EEG data involves converting the EEG signals into audible sound, which can be more intuitive for real-time monitoring compared to visual interpretation. The method leverages the human ear's superior ability to assess both spatial and temporal changes in frequency characteristics, allowing faster and more efficient monitoring of neonatal brain health \cite{IEEEhowto:poveda}.
 
 \subsection{Implementation of Portable EEG Monitoring}
-
-The system includes an EEG acquisition device that transmits data to an Android smartphone via Bluetooth Low Energy (BLE). BLE is preferred for the low power consumption and sufficient data transfer speeds, making it ideal for continuous monitoring applications. 
+The system includes an EEG acquisition device that transmits data to an Android smartphone via Bluetooth Low Energy (BLE). It is preferred for its low power consumption and sufficient data transfer speeds, making it ideal for continuous monitoring applications.
 
 \subsubsection{Multi-Threaded Processing}
 In order to achieve real-time performance, the system uses multi-threaded processing. The vocoder's workload is distributed across multiple threads, allowing the operating system to optimize core usage.  
 
 \subsection{Results and Discussion}
-The system was tested on a Samsung Galaxy Grand Prime smartphone, demonstrating the feasibility of real-time EEG processing and sonification. The results showed that using multiple threads significantly improved the system's performance, allowing it to handle the computational load effectively while maintaining low power consumption.  
+The system was tested on a Samsung Galaxy Grand Prime smartphone, demonstrating the relationship between real-time EEG processing and sonification. The results showed that using multiple threads significantly improved the system's performance, allowing it to handle the computational load effectively while maintaining low power consumption.  
 
 \subsubsection{Practical Implications}
 The portable EEG monitoring system offers practical benefits, including it providing a low-cost alternative to traditional EEG monitoring equipment. The compact and mobile nature of the system makes it accessible for use in various settings, including remote and underserved areas. The implementation of a portable EEG monitoring and sonification system on an Android device highlights the cost-effectiveness, portability, and real-time capabilities of improving the detection and management of neonatal brain injuries.
