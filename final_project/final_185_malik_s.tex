@@ -1,0 +1,179 @@
+\documentclass[12pt,journal,compsoc]{IEEEtran}
+
+%-----PACKAGES-------------------------------------------------------------------------------------
+
+\usepackage{graphicx}        % For including graphics
+\usepackage{amsmath}         % For mathematical formulas
+\usepackage{cite}            % For citations
+\usepackage{hyperref}        % For hyperlinks
+\usepackage{array}           % For better arrays (e.g., matrices) in maths
+\usepackage{caption}         % For customizing captions
+\usepackage{subcaption}      % For subfigures
+\usepackage{booktabs}        % For better table formatting
+\usepackage{multicol}        % For multi-column text
+\usepackage{enumitem}        % For customizable list environments
+\usepackage{float}           % For improved float control
+\usepackage{lipsum}          % For placeholder text
+
+%----- The DOCUMENT Environment-------------------------------------------------------------------
+
+\begin{document}
+
+
+\title{Title goes here}
+\author{Shanaya I. Malik}
+
+
+\date{\today}
+
+% The paper headers
+\markboth{\LaTeX\ IEEE Template Tutorial}%
+{Malik \MakeLowercase{\textit{et al.}}: CMPE185}
+
+% this:
+\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+
+\IEEEcompsoctitleabstractindextext{%
+\begin{abstract}
+%\boldmath
+The abstract goes here.
+\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+CMPE185, \LaTeX\ Tutorial, IEEEtran, journal, \LaTeX, paper, template.
+\end{IEEEkeywords}}
+
+\maketitle
+
+%----- The SECTION Environment -------------------------------------------------------------------
+ 
+\section{Introduction}
+
+\IEEEPARstart{N}{eonatal} neurodevelopmental monitoring is a critical aspect of neonatal care, essential for the early detection and intervention of neurological disorders. The introduction of adaptive telemetry systems represents a significant advancement in this field, offering continuous and real-time brain activity monitoring. 
+
+\subsection{Background and Motivation}
+Monitoring neonatal brain activity is crucial for early detection and intervention in neurological disorders. Neonates, especially those born prematurely, are at a heightened risk of neurodevelopmental impairments due to various factors such as hypoxic-ischemic encephalopathy (HIE), genetic conditions, and environmental stressors. Early identification of these conditions can significantly improve outcomes through timely and targeted interventions. Traditional methods of brain monitoring, such as clinical observation and standard electroencephalography (EEG), have limitations in sensitivity and specificity. These methods often fail to detect subclinical seizures and other subtle neurological abnormalities, leading to delayed diagnosis and treatment.
+
+Recent technological advancements have introduced adaptive telemetry systems that offer continuous and real-time monitoring of neonatal brain activity. These systems integrate advanced EEG techniques with machine learning algorithms to enhance the accuracy and reliability of neurodevelopmental assessments. The integration of these technologies promises to revolutionize neonatal care by providing more precise and actionable insights into brain health.
+
+\subsection{Objectives of the Study}
+The primary objective of this study is to evaluate the effectiveness of adaptive telemetry systems in neonatal neurodevelopmental monitoring. Specifically, the study aims to:
+\begin{itemize}
+    \item Demonstrate the technological advancements in adaptive telemetry systems and their application in neonatal care.
+    \item Assess the accuracy and reliability of these systems in detecting and predicting neurological disorders in newborns.
+    \item Compare the performance of adaptive telemetry systems with traditional EEG and aEEG (amplitude-integrated EEG) methods.
+    \item Investigate the potential of machine learning models in improving early diagnosis and treatment outcomes.
+\end{itemize}
+
+\subsection{Scope and Structure of the Report}
+This report is structured to provide a comprehensive evaluation of adaptive telemetry systems for monitoring neonatal neurodevelopment. The report begins with a detailed literature review, covering current technologies in neonatal brain monitoring, advancements in machine learning for brain age prediction, and the impact of early detection and intervention. The methodology section outlines the design of the adaptive telemetry system, data collection and analysis techniques, and evaluation metrics used in the study.
+
+The results section presents the findings from the performance analysis of the adaptive telemetry system, including case studies and clinical trials. The discussion section explores the implications of these findings for neonatal neurodevelopmental monitoring, addresses challenges and limitations, and suggests future directions for research. Finally, the conclusion summarizes the key findings and contributions of the study.
+
+%----- Additional Features -----------------------------------------------------------------------
+
+\section{Additional Features}
+
+\subsection{Figures}
+% FIGURES:
+
+% Note the FIGURE Environment created by the \begin{figure} and \end{figure} commands.
+
+\begin{figure}[h] 	% There are several different modifiers that can be used in [].
+\centering
+\includegraphics[width=1.5in]{slug.pdf}
+\caption{Sammy the Slug}
+\label{fig_slug}
+\end{figure}
+
+% You will need to use appropriate file types for figures and will also need to include that image file in the same folder as your .tex file. 
+
+%-------------------------------------------------------------------------------------------------
+\subsection{Label, Cite, and Ref Commands}
+You will need to be able to define and explain how to use the following commands:
+\begin{verbatim} \label{fig_slug} \end{verbatim} as it appears in the figure environment\\
+\begin{verbatim} \cite{IEEEhowto:kopka} \end{verbatim} appears like: \cite{IEEEhowto:kopka}\\
+\begin{verbatim} \ref{fig_slug} \end{verbatim} appears like: \ref{fig_slug}\\
+
+% IMPORTANT NOTE: In order to assign the correct reference number to each label, you may have to compile your code twice. 
+
+%-------------------------------------------------------------------------------------------------
+\subsection{Tables}
+An example of a floating table.
+
+%
+\begin{table}[h]
+%% increase table row spacing, adjust to taste
+\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+%\extrarowheight as needed to properly center the text within the cells
+\caption{An Example of a Table}
+\label{table_example}
+\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+\begin{tabular}{|c||c|}
+\hline
+One & Two\\
+\hline
+Three & Four\\
+\hline
+\end{tabular}
+\end{table}
+
+
+\section{Conclusion}
+Conclusion goes here.
+
+%----- APPENDICES --------------------------------------------------------------------------------
+\appendices
+\section{Appendix Title}
+Appendix one text goes here.
+
+% you can choose not to have a title for an appendix
+% if you want by leaving the argument blank
+\section{}
+Appendix two text goes here.
+
+
+%----- ACKNOWLEDGEMENT SECTION -------------------------------------------------------------------
+% Explain what the asterisk * does in the next line: 
+\section*{Acknowledgements}
+
+The author would like to thank...\\ \\
+
+Reminder: you will need to explain how to include an Acknowledgement Section and then include your own Acknowledgement Section at the end of your own tutorial. Same applies for the References/Bibliography.
+
+
+%----- BIBLIOGRAPHY ------------------------------------------------------------------------------
+
+\begin{thebibliography}{1}
+
+\bibitem{IEEEhowto:toet}
+M.~C.~Toet and P.~M.~A.~Lemmers, “Brain Monitoring in Neonates,” \emph{Web of Science}, accessed May 14, 2024. [Online]. Available: \url{https://www.webofscience.com/wos/woscc/full-record/WOS:000263512700003}
+
+\bibitem{IEEEhowto:nicklin}
+S.~Nicklin, A.~et al., “Neonatal Intensive Care Monitoring,” \emph{Current Paediatrics}, accessed May 14, 2024. [Online]. Available: \url{https://www.sciencedirect.com/science/article/pii/S0957583903001283}
+
+\bibitem{IEEEhowto:poveda}
+J.~Poveda, M.~O'Sullivan, E.~Popovici, and A.~Temko, "Portable neonatal EEG monitoring and sonification on an Android device," in \emph{Proc. 2017 39th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)}, Jeju, Korea (South), 2017, pp. 2018-2021, doi: 10.1109/EMBC.2017.8037248.
+
+\end{thebibliography}
+
+%----- Optional: BIOGRAPHY Section ---------------------------------------------------------------
+
+\begin{IEEEbiography}{Gerald Moulds}
+Biography text here.
+\end{IEEEbiography}
+
+% if you will not have a photo at all:
+\begin{IEEEbiographynophoto}{John Doe}
+Biography text here.
+\end{IEEEbiographynophoto}
+
+\begin{IEEEbiographynophoto}{Jane Doe}
+Biography text here.
+\end{IEEEbiographynophoto}
+
+\end{document}
