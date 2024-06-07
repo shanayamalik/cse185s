@@ -119,11 +119,29 @@ A key feature of adaptive telemetry systems is their integration with machine le
 
 Machine learning algorithms can be trained on large datasets to recognize complex patterns in EEG signals that may not be apparent to human observers. By continuously learning and updating their models, these systems can improve their predictive accuracy over time, offering a dynamic and robust solution for neonatal brain monitoring. The integration of machine learning also facilitates the development of predictive models that can identify at-risk neonates early, allowing for proactive and targeted interventions.
 
-\subsubsection{Portable Monitoring Systems for Android Devices}
+\subsection{Portable Monitoring Systems for Android Devices}
 
-Another significant advancement is the development of portable monitoring systems for Android devices, offering a low-cost, mobile solution for EEG monitoring. These systems, designed to be user-friendly and accessible, facilitate continuous brain health assessment through EEG sonification, where EEG signals are converted into audible sounds. This method leverages the human ear's capability to detect changes in frequency characteristics, enabling faster and more intuitive monitoring.
+Another significant advancement is the development of portable monitoring systems for Android devices, offering a low-cost, mobile solution for EEG monitoring. These systems, designed to be user-friendly and accessible, facilitate continuous brain health assessment through EEG sonification, where EEG signals are converted into audible sounds. This method leverages the human ear's capability to detect changes in frequency characteristics, enabling faster and more intuitive monitoring (see Figure \ref{fig:portable_eeg_systems}).
 
 Portable EEG systems are particularly beneficial in resource-limited settings, where access to specialized equipment and trained personnel may be restricted. By utilizing widely available smartphone technology, these systems ensure that high-quality neurodevelopmental monitoring can be conducted even in underserved areas. The mobility and ease of use of these portable systems make them an attractive option for expanding the reach of neonatal care.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{andorid_app_demo.png}
+        \caption{EEG Sonification App on Android Device.}
+        \label{fig:app_demo}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\linewidth}
+        \includegraphics[width=\linewidth]{neonatal_brain_stethoscope.png}
+        \caption{Neonatal Brain Stethoscope.}
+        \label{fig:brain_stethoscope}
+    \end{subfigure}
+    \caption{Portable Monitoring Systems for Android Devices. (a) EEG Sonification App for real-time monitoring. (b) Process of EEG data acquisition and monitoring using Android device.}
+    \label{fig:portable_eeg_systems}
+\end{figure}
+
 
 \subsection{Importance of Early Detection and Intervention}
 
@@ -213,6 +231,30 @@ Further analysis revealed that the system's accuracy was consistent across vario
 
 Additionally, the system's false positive and false negative rates were analyzed to ensure that the high accuracy metrics were not achieved at the expense of significant errors. The false positive rate was found to be 6\%, while the false negative rate was 8\%. These low rates indicate a balanced performance, reducing the likelihood of unnecessary interventions and missed critical events. The comprehensive evaluation of seizure types and error rates demonstrates the system's utility in varied clinical scenarios, providing confidence in its application for broad neonatal monitoring.
 
+\subsubsection{Accuracy of Seizure Detection}
+
+The adaptive telemetry system demonstrated high accuracy in detecting neonatal seizures. The system was tested on a dataset comprising EEG recordings from 100 neonates, including both seizure and non-seizure events. The results showed a sensitivity of 94\% and a specificity of 92\%, indicating the system's robustness in distinguishing between seizure and non-seizure activities. The machine learning algorithms employed were particularly effective in identifying subtle patterns indicative of seizures that are often missed by traditional methods.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{studies_predictive_values_sensitivity_specitivity.png}
+    \caption{Performance metrics of various studies on neonatal EEG monitoring.}
+    \label{fig:performance_metrics}
+\end{figure}
+
+\subsubsection{ROC Curve Analysis}
+
+Further analysis revealed that the system's accuracy was consistent across various types of seizures, including focal and generalized seizures. This robustness is crucial for ensuring comprehensive monitoring in a diverse neonatal population. The high sensitivity and specificity metrics highlight the potential of adaptive telemetry systems to serve as a reliable tool in the early detection of neonatal seizures, thus facilitating timely medical interventions.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{sensitivity_vs_specitivity.png}
+    \caption{ROC curve showing the sensitivity and specificity of the adaptive telemetry system in detecting neonatal seizures.}
+    \label{fig:roc_curve}
+\end{figure}
+
+Additionally, the system's false positive and false negative rates were analyzed to ensure that the high accuracy metrics were not achieved at the expense of significant errors. The false positive rate was found to be 6\%, while the false negative rate was 8\%. These low rates indicate a balanced performance, reducing the likelihood of unnecessary interventions and missed critical events. The comprehensive evaluation of seizure types and error rates demonstrates the system's utility in varied clinical scenarios, providing confidence in its application for broad neonatal monitoring.
+
 \subsubsection{Latency in Signal Processing}
 
 Latency in signal processing is critical for real-time monitoring and intervention. The adaptive telemetry system achieved an average processing latency of 200 milliseconds, well within the acceptable range for clinical applications. This low latency ensures that clinical staff can receive timely alerts and intervene promptly in the event of a detected seizure or other abnormal neurological activity.
@@ -246,16 +288,20 @@ The performance of the portable monitoring system was tested in various clinical
 In home care settings, the portable system demonstrated its potential to extend continuous monitoring beyond the hospital, allowing for early detection and intervention in at-risk neonates discharged from the NICU. This capability supports the ongoing care and monitoring of neonates, contributing to improved long-term health outcomes.
 
 \subsection{Case Studies}
-
 Several case studies were conducted to illustrate the practical application and benefits of the adaptive telemetry systems in neonatal care. These case studies highlight real-world scenarios where the system's advanced features provided critical insights and improved clinical outcomes.
 
 \subsubsection{Case Study 1: Hypoxic-Ischemic Encephalopathy (HIE)}
 
 A neonate diagnosed with HIE was monitored using the adaptive telemetry system. Continuous EEG monitoring over 72 hours revealed multiple subclinical seizures that were not apparent through clinical observation alone. Early detection and intervention based on the telemetry data led to prompt administration of anticonvulsant therapy, significantly improving the neonate's neurodevelopmental outcome at six-month follow-up.
 
-In this case, the use of adaptive telemetry allowed for the identification of a pattern of seizure activity that would likely have been missed by traditional monitoring methods. The timely intervention prevented further brain injury, highlighting the critical role of advanced telemetry in managing high-risk neonatal conditions.
+Figure~\ref{fig:eeg_data} shows a sample EEG recording from this case study, highlighting the system's capability to continuously monitor and detect seizure activities.
 
-Detailed analysis of the EEG data showed distinct seizure patterns that were correlated with specific periods of clinical instability. The system's ability to continuously monitor and analyze brain activity provided a comprehensive view of the neonate's neurological status, allowing for targeted and effective interventions. The case study highlights the importance of continuous monitoring in detecting and managing subtle and subclinical events that can have significant long-term implications for neurodevelopment.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{case_studies_aEEG_vs_EEG.png}
+    \caption{Sample EEG recording over time demonstrating continuous monitoring and seizure detection capabilities of the adaptive telemetry system.}
+    \label{fig:eeg_data}
+\end{figure}
 
 \subsubsection{Case Study 2: Preterm Infant with Intraventricular Hemorrhage (IVH)}
 
